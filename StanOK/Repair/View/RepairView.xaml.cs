@@ -11,24 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using StanOK.Authorization.Model;
 
-namespace StanOK.Authorization.View
+namespace StanOK.Repair.View
 {
     /// <summary>
-    /// Логика взаимодействия для LoginView.xaml
+    /// Логика взаимодействия для RepairView.xaml
     /// </summary>
-    public partial class LoginView : Window
+    public partial class RepairView : Window
     {
-        public LoginView()
+        public RepairView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainPage.View.MainPageView mainPageView = new MainPage.View.MainPageView();
-            mainPageView.Show();
         }
     }
 }

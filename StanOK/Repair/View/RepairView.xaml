@@ -1,0 +1,77 @@
+﻿<Window x:Class="StanOK.Repair.View.RepairView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StanOK.Repair.View"
+        mc:Ignorable="d"
+        Title="Окно данных по ремонту" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Center"
+               Content="Название"
+               FontSize="16"/>
+        <TextBox Grid.Row="1" 
+                 Width="400"
+                 Grid.ColumnSpan="2"/>
+        <Label Content="Продолжительность"
+               Grid.Column="0"
+               FontSize="16"
+               HorizontalAlignment="Center"
+               Grid.Row="2"/>
+        <Label Content="Стоимость"
+               Grid.Column="1"
+               FontSize="16"
+               HorizontalAlignment="Center"
+               Grid.Row="2"/>
+        <TextBox Grid.Row="3"
+                 Width="400"
+                 Margin="10,0,10,0"
+                 Grid.Column="0" />
+        <TextBox Grid.Row="3" 
+                 Width="400"
+                 Margin="10,0,10,0"
+                 Grid.Column="1" />
+        <Label Content="Примечания" Grid.Row="4"
+               HorizontalAlignment="Center"
+               FontSize="16"
+               Grid.ColumnSpan="2" Grid.Column="0"/>
+        <TextBox Grid.Row="5" Grid.Column="0"
+                 Grid.ColumnSpan="2"
+                 >
+        </TextBox>
+        <StackPanel Grid.Row="6"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+            <Button Width="200"
+                    Content="Вернуться к выбору типа ремонта"
+                    Margin="10"/>
+            <Button Width="200"
+                    Content="Изменить данные по ремонту"
+                    Margin="10"/>
+            <Button Width="200"
+                    Content="Данные по оказанным услугам"
+                    Margin="10"/>
+        </StackPanel>
+
+
+
+
+    </Grid>
+</Window>
