@@ -59,6 +59,9 @@
     <Compile Include="Repair\View\RepairView.xaml.cs">
       <DependentUpon>RepairView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\View\ServicesView.xaml.cs">
+      <DependentUpon>ServicesView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Authorization\View\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +89,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Repair\View\RepairView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Services\View\ServicesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
