@@ -7,12 +7,19 @@
         mc:Ignorable="d"
         Title="Окно данных по оказанным услугам" Height="450" Width="800">
     <Grid>
-        <DataGrid RenderTransformOrigin="0.495,0.432"/>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="36,353,0,0" VerticalAlignment="Top" Height="50" Width="100"/>
-        <Button Content="Обновить" HorizontalAlignment="Left" Margin="158,353,0,0" VerticalAlignment="Top" Height="50" Width="100"/>
-        <Button Content="Получить справку по видам станков" HorizontalAlignment="Center" Margin="0,353,0,0" VerticalAlignment="Top" Height="44" Width="232"/>
-        <Button Content="Удалить" HorizontalAlignment="Left" Margin="551,354,0,0" VerticalAlignment="Top" Height="50" Width="100"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="673,355,0,0" VerticalAlignment="Top" Height="50" Width="100"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0"/>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1">
+            <Button Content="Назад" HorizontalAlignment="Left" Height="50" Width="100"/>
+            <Button Content="Обновить" HorizontalAlignment="Left" Height="50" Width="100"/>
+            <Button Content="Получить справку по видам станков" HorizontalAlignment="Center" Height="44" Width="232"/>
+            <Button Content="Удалить" HorizontalAlignment="Left" Height="50" Width="100"/>
+            <Button Content="Добавить" HorizontalAlignment="Left" Height="50" Width="100"/>
+        </StackPanel>
+        
 
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using StanOK.Authorization.Model;
+using StanOK.Authorization.ViewModel;
 
 namespace StanOK.Authorization.View
 {
@@ -20,15 +21,22 @@ namespace StanOK.Authorization.View
     /// </summary>
     public partial class LoginView : Window
     {
+        AuthorizationViewModel ViewModel;
         public LoginView()
         {
             InitializeComponent();
+            ViewModel = new AuthorizationViewModel();
+            DataContext = ViewModel;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainPage.View.MainPageView mainPageView = new MainPage.View.MainPageView();
-            mainPageView.Show();
+            if (ViewModel.Authorizaton())
+            {
+                MainPage.View.MainPageView mainPageView = new MainPage.View.MainPageView();
+                mainPageView.Show();
+            }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace StanOK
     {
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
             LoginView loginView = new LoginView();
             loginView.Show();
         }
