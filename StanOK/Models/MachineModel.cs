@@ -22,6 +22,6 @@ namespace StanOK.Models
         [Column("brand")]
         public string Brand { get; set; }
         [Column("year")]
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
     }
 }

@@ -103,6 +103,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Authorization\ViewModel\AuthorizationViewModel.cs" />
+    <Compile Include="Migrations\202305311340538_postgres.cs" />
+    <Compile Include="Migrations\202305311340538_postgres.designer.cs">
+      <DependentUpon>202305311340538_postgres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MachineModel.cs" />
@@ -164,6 +168,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202305311340538_postgres.resx">
+      <DependentUpon>202305311340538_postgres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
