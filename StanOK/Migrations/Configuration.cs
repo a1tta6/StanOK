@@ -5,6 +5,7 @@
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Globalization;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<StanOK.Utils.UserContext>
@@ -29,7 +30,7 @@
                     Repair_name = "Мелкий ремонт",
                     Cost = 5600,
                     Comment = "Ремонт малой продолжительности, c которым может справиться один мастер в течение рабочей смены",
-                    Duration = DateTime.Parse("00.00.00 8:00")
+                    Duration = DateTime.ParseExact("08:00", "HH:mm", CultureInfo.GetCultureInfo("ru-RU"))
                 }
             );
             context.RepairTypes.Add(
@@ -39,7 +40,7 @@
                     Repair_name = "Замена узлов",
                     Cost = 13000,
                     Comment = "Полная разборка прибора с заменой изношеных узлов",
-                    Duration = DateTime.Parse("00.00.04 00:00")
+                    Duration = DateTime.ParseExact("08:00", "HH:mm", CultureInfo.GetCultureInfo("ru-RU"))
                 }
             );
             context.RepairTypes.Add(
@@ -49,7 +50,7 @@
                     Repair_name = "Шлифовка направляющих",
                     Cost = 60000,
                     Comment = "Шлифовка проводится на специальном шлифовальном станке",
-                    Duration = DateTime.Parse("00.00.06 00:00")
+                    Duration = DateTime.ParseExact("08:00", "HH:mm", CultureInfo.GetCultureInfo("ru-RU"))
                 }
             );
             context.RepairTypes.Add(
@@ -59,7 +60,7 @@
                     Repair_name = "Восстановление геометрической базы",
                     Cost = 15000,
                     Comment = "Восстановления геометрической и технологической точностей, в соответствии паспортным данным станка.",
-                    Duration = DateTime.Parse("00.00.15 00:00")
+                    Duration = DateTime.ParseExact("08:00", "HH:mm", CultureInfo.GetCultureInfo("ru-RU"))
                 }
             );
             context.RepairTypes.Add(
@@ -69,7 +70,7 @@
                     Repair_name = "Сбор станков",
                     Cost = 60400,
                     Comment = "Общая сборка станка из комплектующих",
-                    Duration = DateTime.Parse("00.00.10 00:00")
+                    Duration = DateTime.ParseExact("08:00", "HH:mm", CultureInfo.GetCultureInfo("ru-RU"))
                 }
             );
             context.RepairTypes.Add(
@@ -79,7 +80,7 @@
                     Repair_name = "Регулирвка станков",
                     Cost = 5600,
                     Comment = "Регулировка станка на точность и обкатка под нагрузкой",
-                    Duration = DateTime.Parse("00.00.00 6:00")
+                    Duration = DateTime.ParseExact("08:00", "HH:mm", CultureInfo.GetCultureInfo("ru-RU"))
                 }
             );
             context.Machines.Add(new MachineModel { Id = 1, Year = 2007, Brand = "JET", MachineType = "Токарный", Country = "Швейцария" });

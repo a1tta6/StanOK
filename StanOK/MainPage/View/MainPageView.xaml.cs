@@ -29,5 +29,11 @@ namespace StanOK.MainPage.View
             Repair.View.RepairView repairView = new Repair.View.RepairView();
             repairView.Show();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            UserData.View.UserDataView userdataView = new UserData.View.UserDataView();
+            userdataView.Show();
+        }
     }
 }
