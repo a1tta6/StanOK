@@ -103,6 +103,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Authorization\ViewModel\AuthorizationViewModel.cs" />
+    <Compile Include="Benches\View\BenchesView.xaml.cs">
+      <DependentUpon>BenchesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202305311340538_postgres.cs" />
     <Compile Include="Migrations\202305311340538_postgres.designer.cs">
       <DependentUpon>202305311340538_postgres.cs</DependentUpon>
@@ -120,6 +123,10 @@
     </Compile>
     <Compile Include="Utils\UserContext.cs" />
     <Page Include="Authorization\View\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Benches\View\BenchesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
