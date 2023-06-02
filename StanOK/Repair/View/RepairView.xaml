@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StanOK.Repair.View"
         mc:Ignorable="d"
-        Title="Окно данных по ремонту" Height="450" Width="800">
+        Title="Окно данных по ремонту" Height="450" Width="800"
+        xmlns:VM="clr-namespace:StanOK.Repair.ViewModel"
+        d:DataContext="{d:DesignInstance Type={x:Type VM:RepairViewModel}}">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -28,6 +31,8 @@
                FontSize="16"/>
         <TextBox Grid.Row="1" 
                  Width="400"
+                 IsReadOnly="True"
+                 Text="{Binding Repair.Repair_name}"
                  FontSize="16"
                  Grid.ColumnSpan="2"/>
         <Label Content="Продолжительность"
@@ -43,12 +48,16 @@
         <TextBox Grid.Row="3"
                  Width="300"
                  FontSize="16"
+                 IsReadOnly="True"
+                 Text="{Binding Repair.Duration}"
                  Margin="10,0,10,0"
                  Grid.Column="0" />
         <TextBox Grid.Row="3" 
                  Width="300"
+                 IsReadOnly="True"
                  FontSize="16"
                  Margin="10,0,10,0"
+                 Text="{Binding Repair.Cost}"
                  Grid.Column="1" />
         <Label Content="Примечания" Grid.Row="4"
                HorizontalAlignment="Center"
@@ -58,6 +67,8 @@
                  Margin="10"
                  FontSize="16"
                  Grid.ColumnSpan="2"
+                 IsReadOnly="True"
+                 Text="{Binding Repair.Comment}"
                  >
         </TextBox>
         <StackPanel Grid.Row="6"
@@ -66,6 +77,7 @@
                     Orientation="Horizontal">
             <Button Width="200"
                     Content="Вернуться к выбору типа ремонта"
+                    Click="Button_Click"
                     Margin="10"/>
             <Button Width="200"
                     Content="Изменить данные по ремонту"

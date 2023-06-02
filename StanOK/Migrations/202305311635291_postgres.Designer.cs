@@ -13,7 +13,7 @@ namespace StanOK.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202305311340538_postgres"; }
+            get { return "202305311635291_postgres"; }
         }
         
         string IMigrationMetadata.Source

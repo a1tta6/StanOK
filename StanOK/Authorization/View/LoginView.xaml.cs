@@ -27,7 +27,6 @@ namespace StanOK.Authorization.View
             InitializeComponent();
             ViewModel = new AuthorizationViewModel();
             DataContext = ViewModel;
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,6 +35,7 @@ namespace StanOK.Authorization.View
             {
                 MainPage.View.MainPageView mainPageView = new MainPage.View.MainPageView();
                 mainPageView.Show();
+                this.Close();
             }
         }
     }

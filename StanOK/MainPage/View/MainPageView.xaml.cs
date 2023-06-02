@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StanOK.Authorization.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,19 @@ namespace StanOK.MainPage.View
     /// </summary>
     public partial class MainPageView : Window
     {
+        MainPageViewModel ViewModel;
+
         public MainPageView()
         {
             InitializeComponent();
+            ViewModel = new MainPageViewModel();
+            DataContext = ViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RepairType_Click(object sender, RoutedEventArgs e)
         {
-            Repair.View.RepairView repairView = new Repair.View.RepairView();
+            string type = (sender as Button).Content.ToString();
+            Repair.View.RepairView repairView = new Repair.View.RepairView(type);
             repairView.Show();
         }
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StanOK.Authorization.ViewModel;
+using StanOK.Repair.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,17 @@ namespace StanOK.Repair.View
     /// </summary>
     public partial class RepairView : Window
     {
-        public RepairView()
+        RepairViewModel ViewModel;
+        public RepairView(string type)
         {
             InitializeComponent();
+            ViewModel = new RepairViewModel(type);
+            DataContext = ViewModel;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

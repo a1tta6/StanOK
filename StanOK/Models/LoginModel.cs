@@ -26,6 +26,5 @@ namespace StanOK.Authorization.Model
         }
         [Column("Role")]
         public string Role { get; set; }
-        // NTCNSIOSOI
     }
 }
