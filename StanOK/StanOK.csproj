@@ -103,6 +103,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Authorization\ViewModel\AuthorizationViewModel.cs" />
+    <Compile Include="Benches\View\BenchesView.xaml.cs">
+      <DependentUpon>BenchesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305311340538_postgres.cs" />
+    <Compile Include="Migrations\202305311340538_postgres.designer.cs">
+      <DependentUpon>202305311340538_postgres.cs</DependentUpon>
     <Compile Include="MainPage\ViewModel\MainPageViewModel.cs" />
     <Compile Include="Migrations\202305311635291_postgres.cs" />
     <Compile Include="Migrations\202305311635291_postgres.designer.cs">
@@ -120,8 +126,16 @@
     <Compile Include="Services\View\ServicesView.xaml.cs">
       <DependentUpon>ServicesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserData\ViewModel\UserDataViewModel.cs" />
+    <Compile Include="UserData\View\UserDataView.xaml.cs">
+      <DependentUpon>UserDataView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utils\UserContext.cs" />
     <Page Include="Authorization\View\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Benches\View\BenchesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,6 +169,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserData\View\UserDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -170,8 +188,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202305311635291_postgres.resx">
-      <DependentUpon>202305311635291_postgres.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202306020637215_postgres.resx">
+      <DependentUpon>202306020637215_postgres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
