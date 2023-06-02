@@ -34,5 +34,8 @@ namespace StanOK.Models
         [ForeignKey("RepairType")]
         public RepairTypeModel Repair { get; set; }
 
+        public string MachineName { get; set; }
+        public string RepairName { get; set; }
+
     }
 }

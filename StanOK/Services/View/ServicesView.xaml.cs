@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StanOK.Services.ViewModel;
+using StanOK.UserData.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +19,16 @@ namespace StanOK.Services.View
     /// <summary>
     /// Логика взаимодействия для ServicesView.xaml
     /// </summary>
+
+
     public partial class ServicesView : Window
     {
+        ServicesViewModel ViewModel;
         public ServicesView()
         {
             InitializeComponent();
+            ViewModel = new ServicesViewModel();
+            DataContext = ViewModel;
         }
     }
 }

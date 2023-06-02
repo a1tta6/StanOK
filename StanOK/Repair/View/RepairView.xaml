@@ -68,6 +68,7 @@
                  FontSize="16"
                  Grid.ColumnSpan="2"
                  IsReadOnly="True"
+                 TextWrapping="Wrap"
                  Text="{Binding Repair.Comment}"
                  >
         </TextBox>
@@ -77,12 +78,15 @@
                     Orientation="Horizontal">
             <Button Width="200"
                     Content="Вернуться к выбору типа ремонта"
-                    Click="Button_Click"
-                    Margin="10"/>
+                    Click="Back_Click"
+                    Margin="10"
+                    x:Name="Back"/>
             <Button Width="200"
                     Content="Изменить данные по ремонту"
                     Margin="10"/>
             <Button Width="200"
+                    x:Name="Services"
+                    Click="Services_Click"
                     Content="Данные по оказанным услугам"
                     Margin="10"/>
         </StackPanel>

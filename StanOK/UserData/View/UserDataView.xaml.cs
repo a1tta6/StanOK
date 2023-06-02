@@ -1,4 +1,5 @@
 ﻿using StanOK.Authorization.ViewModel;
+using StanOK.MainPage.View;
 using StanOK.UserData.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,13 @@ namespace StanOK.UserData.View
             InitializeComponent();
             ViewModel = new UserDataViewModel();
             DataContext = ViewModel;
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainPageView mainPageWindow = new MainPageView();
+            mainPageWindow.Show();
+            this.Close();
         }
     }
 }

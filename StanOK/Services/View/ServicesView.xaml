@@ -8,16 +8,51 @@
         Title="Окно данных по оказанным услугам" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0"/>
+        <DataGrid Grid.Row="0"
+                  ItemsSource="{Binding RepairModel}"
+                  AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="70" FontSize="18"
+                                    Header="Номер" Binding="{Binding Path=Id}"/>
+                <DataGridTextColumn Width="*" FontSize="18"
+                                    Header="Вид станка" Binding="{Binding Path=MachineName}"/>
+                <DataGridTextColumn Width="*"  FontSize="18"
+                                    Header="Ремонт" Binding="{Binding Path=RepairName}"/>
+                <DataGridTextColumn Width="*"  FontSize="18"
+                                    Header="Дата начала" Binding="{Binding Path=DateBegin}"/>
+                <DataGridTextColumn Width="*"  FontSize="18"
+                                    Header="Примечание" Binding="{Binding Path=Comment}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
                     Grid.Row="1">
-            <Button Content="Назад" HorizontalAlignment="Left" Height="50" Width="100"/>
-            <Button Content="Обновить" HorizontalAlignment="Left" Height="50" Width="100"/>
-            <Button Content="Получить справку по видам станков" HorizontalAlignment="Center" Height="44" Width="232"/>
-            <Button Content="Удалить" HorizontalAlignment="Left" Height="50" Width="100"/>
-            <Button Content="Добавить" HorizontalAlignment="Left" Height="50" Width="100"/>
+            <Button Content="Назад"
+                    FontSize="18"
+                    Margin="30,0,0,0"
+                    Height="50" Width="100"/>
+            <Button Content="Обновить"
+                    FontSize="18"
+                    Margin="30,0,0,0"
+                    Height="50" Width="100"/>
+            <Button Content="Получить справку по видам станков" 
+                    FontSize="18"
+                    HorizontalAlignment="Center" 
+                    Margin="30,0,0,0"
+                    Height="50" Width="232"/>
+            <Button Content="Удалить"
+                    FontSize="18"
+                    Margin="30,0,0,0"
+                    Height="50" Width="100"/>
+            <Button Content="Добавить"
+                    FontSize="18"
+                    Margin="30,0,0,0"
+                    Height="50" Width="100"/>
         </StackPanel>
         
 
