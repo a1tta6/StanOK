@@ -5,46 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StanOK.Services.View"
         mc:Ignorable="d"
-        Title="Окно данных по оказанным услугам" Height="450" Width="800">
+        Title="Окно данных по оказанным услугам" Height="450" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0"
                   ItemsSource="{Binding RepairModel}"
                   AutoGenerateColumns="False"
                   CanUserReorderColumns="False"
                   CanUserAddRows="False">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="FontSize" Value="18"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Width="70" FontSize="18"
                                     Header="Номер" Binding="{Binding Path=Id}"/>
-                <DataGridTextColumn Width="*" FontSize="18"
+                <DataGridTextColumn Width="auto" FontSize="18"
                                     Header="Вид станка" Binding="{Binding Path=MachineName}"/>
-                <DataGridTextColumn Width="*"  FontSize="18"
+                <DataGridTextColumn Width="auto"  FontSize="18"
                                     Header="Ремонт" Binding="{Binding Path=RepairName}"/>
-                <DataGridTextColumn Width="*"  FontSize="18"
-                                    Header="Дата начала" Binding="{Binding Path=DateBegin}"/>
+                <DataGridTextColumn Width="auto"  FontSize="18"
+                                    Header="Дата начала" 
+                                    
+                                    Binding="{Binding Path=DateBegin, StringFormat={}{0:dd.MM.yyyy}}"/>
                 <DataGridTextColumn Width="*"  FontSize="18"
                                     Header="Примечание" Binding="{Binding Path=Comment}"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
                     Grid.Row="1">
             <Button Content="Назад"
                     FontSize="18"
                     Margin="30,0,0,0"
-                    Height="50" Width="100"/>
+                    x:Name="BackButton"
+                    Click="BackButton_Click"
+                    Width="100"/>
             <Button Content="Обновить"
                     FontSize="18"
                     Margin="30,0,0,0"
                     Height="50" Width="100"/>
-            <Button Content="Получить справку по видам станков" 
+            <Button Content="Получить справку по видам станков"
+                    Name="GetMachines"
+                    Click="GetMachines_Click"
                     FontSize="18"
                     HorizontalAlignment="Center" 
                     Margin="30,0,0,0"
-                    Height="50" Width="232"/>
+                    Height="50" Width="350"/>
             <Button Content="Удалить"
                     FontSize="18"
                     Margin="30,0,0,0"

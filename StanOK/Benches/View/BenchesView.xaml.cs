@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StanOK.Benches.ViewModel;
+using StanOK.MainPage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +21,17 @@ namespace StanOK.Benches
     /// </summary>
     public partial class BenchesView : Window
     {
+        BenchesViewModel ViewModel;
         public BenchesView()
         {
             InitializeComponent();
+            ViewModel = new BenchesViewModel();
+            DataContext = ViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            Services.View.ServicesView servicesView = new Services.View.ServicesView();
-            servicesView.Show();
+            this.Close();
         }
     }
 }

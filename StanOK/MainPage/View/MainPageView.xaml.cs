@@ -1,4 +1,5 @@
-﻿using StanOK.Authorization.ViewModel;
+﻿using StanOK.Authorization.View;
+using StanOK.Authorization.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,15 +34,20 @@ namespace StanOK.MainPage.View
         {
             string type = (sender as Button).Content.ToString();
             Repair.View.RepairView repairView = new Repair.View.RepairView(type);
-            repairView.Show();
+            repairView.ShowDialog();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginView loginView = new LoginView();
+            loginView.Show();
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ShowUsersButton_Click(object sender, RoutedEventArgs e)
         {
             UserData.View.UserDataView userdataView = new UserData.View.UserDataView();
-            userdataView.Show();
-            this.Close(); 
+            userdataView.ShowDialog();
         }
     }
 }

@@ -36,11 +36,15 @@
             <Button Margin="20" 
                     Content="Закончить сеанс пользователя" 
                     Width="250"
+                    x:Name="BackButton"
+                    Click="BackButton_Click"
                     FontSize="16"/>
             <Button Margin="20" 
                     Width="250"
+                    x:Name="ShowUsersButton"
+                    Click="ShowUsersButton_Click"
                     Content="Просмотреть пользователей" 
-                    FontSize="16" Click="Button_Click_1"/>
+                    FontSize="16"/>
         </StackPanel>
     </Grid>
 </Window>

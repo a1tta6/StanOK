@@ -103,6 +103,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Authorization\ViewModel\AuthorizationViewModel.cs" />
+    <Compile Include="Benches\ViewModel\BenchesViewModel.cs" />
     <Compile Include="Benches\View\BenchesView.xaml.cs">
       <DependentUpon>BenchesView.xaml</DependentUpon>
     </Compile>

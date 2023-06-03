@@ -19,10 +19,17 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Label HorizontalAlignment="Center" Grid.Row="0" Content="Логин:" FontSize="16"/>
-        <TextBox Text="{Binding Login, Mode=TwoWay}" Margin="10" Grid.Row="1"/>
-        <Label HorizontalAlignment="Center" Grid.Row="2" Content="Пароль:" FontSize="16"/>
-        <TextBox Text="{Binding Password, Mode=TwoWay}" Margin="10" Grid.Row="3"/>
-        <Button Grid.Row="4" Width="100" Click="Button_Click" Content="Войти" FontSize="16"/>
+        <Label HorizontalAlignment="Center" Grid.Row="0" Content="Логин:" FontSize="18"/>
+        <TextBox Text="{Binding Login, Mode=TwoWay}"
+                 FontSize="18"
+                 TextAlignment="Center"
+                 Margin="10" Grid.Row="1"/>
+        <Label HorizontalAlignment="Center" Grid.Row="2" Content="Пароль:" FontSize="18"/>
+        <TextBox 
+            Text="{Binding Password, Mode=TwoWay}" 
+            FontSize="18"
+            TextAlignment="Center"
+            Margin="10" Grid.Row="3"/>
+        <Button Grid.Row="4" Width="100" Click="Button_Click" Content="Войти" FontSize="18"/>
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
-﻿using StanOK.Services.ViewModel;
+﻿using StanOK.Benches;
+using StanOK.Repair.View;
+using StanOK.Services.ViewModel;
 using StanOK.UserData.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -29,6 +31,17 @@ namespace StanOK.Services.View
             InitializeComponent();
             ViewModel = new ServicesViewModel();
             DataContext = ViewModel;
+        }
+
+        private void GetMachines_Click(object sender, RoutedEventArgs e)
+        {
+            BenchesView benchesView = new BenchesView();
+            benchesView.ShowDialog(); 
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

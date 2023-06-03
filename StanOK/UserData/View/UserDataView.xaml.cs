@@ -32,8 +32,6 @@ namespace StanOK.UserData.View
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            MainPageView mainPageWindow = new MainPageView();
-            mainPageWindow.Show();
             this.Close();
         }
     }

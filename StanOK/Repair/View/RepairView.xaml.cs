@@ -33,16 +33,13 @@ namespace StanOK.Repair.View
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            MainPageView mainPageWindow = new MainPageView();
-            mainPageWindow.Show();
             this.Close();
         }
 
         private void Services_Click(object sender, RoutedEventArgs e)
         {
             ServicesView ServicesWindow = new ServicesView();
-            ServicesWindow.Show();
-            this.Close();
+            ServicesWindow.ShowDialog();
         }
     }
 }
