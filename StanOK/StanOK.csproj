@@ -103,10 +103,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Authorization\ViewModel\AuthorizationViewModel.cs" />
+    <Compile Include="Benches\ViewModel\BenchesViewModel.cs" />
     <Compile Include="Benches\View\BenchesView.xaml.cs">
       <DependentUpon>BenchesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage\ViewModel\MainPageViewModel.cs" />
+    <Compile Include="Migrations\202306022244337_postgres.cs" />
+    <Compile Include="Migrations\202306022244337_postgres.designer.cs">
+      <DependentUpon>202306022244337_postgres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MachineModel.cs" />
@@ -116,6 +121,7 @@
     <Compile Include="Repair\View\RepairView.xaml.cs">
       <DependentUpon>RepairView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\ViewModel\ServicesViewModel.cs" />
     <Compile Include="Services\View\ServicesView.xaml.cs">
       <DependentUpon>ServicesView.xaml</DependentUpon>
     </Compile>
@@ -181,6 +187,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202306022244337_postgres.resx">
+      <DependentUpon>202306022244337_postgres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

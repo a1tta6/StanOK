@@ -5,12 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StanOK.Benches"
         mc:Ignorable="d"
-        Title="Окно данных по станкам" Height="450" Width="800">
+        Title="Окно данных по станкам" Height="450" Width="800"
+        MinWidth="686"
+        MinHeight="350">
     <Grid>
-        <DataGrid Margin="98,36,98,151"/>
-        <Button Content="Назад" HorizontalAlignment="Left" Margin="98,349,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Button_Click"/>
-        <Button Content="Удалить" HorizontalAlignment="Center" Margin="0,354,0,0" VerticalAlignment="Top" Height="40" Width="70"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="618,354,0,0" VerticalAlignment="Top" Height="40" Width="70"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" ItemsSource="{Binding BenchesList}"
+                  AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="FontSize" Value="18"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="auto" FontSize="18" Binding="{Binding Path=Id}" Header="Номер"/>
+                <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=MachineType}" Header="Вид станка"/>
+                <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Country}" Header="Страна"/>
+                <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Brand}" Header="Марка"/>
+                <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Year}" Header="Год"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Назад" 
+                    Margin="30,0,0,0"
+                    x:Name="BackButton"
+                    FontSize="18" Height="60" 
+                    Width="120" Click="BackButton_Click"/>
+            <Button Content="Удалить" 
+                    Margin="30,0,0,0"
+                    FontSize="18" Height="60" Width="120"/>
+            <Button Content="Добавить" FontSize="18" 
+                    Margin="30,0,0,0"
+                    Height="60" Width="120"/>
+        </StackPanel>
 
     </Grid>
 </Window>

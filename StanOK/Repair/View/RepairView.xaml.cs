@@ -1,5 +1,7 @@
 ﻿using StanOK.Authorization.ViewModel;
+using StanOK.MainPage.View;
 using StanOK.Repair.ViewModel;
+using StanOK.Services.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +31,15 @@ namespace StanOK.Repair.View
             DataContext = ViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
 
+        private void Services_Click(object sender, RoutedEventArgs e)
+        {
+            ServicesView ServicesWindow = new ServicesView();
+            ServicesWindow.ShowDialog();
         }
     }
 }

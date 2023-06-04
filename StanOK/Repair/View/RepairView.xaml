@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:StanOK.Repair.View"
         mc:Ignorable="d"
         Title="Окно данных по ремонту" Height="450" Width="800"
+        MinWidth="1000"
+        MinHeight="450"
         xmlns:VM="clr-namespace:StanOK.Repair.ViewModel"
         d:DataContext="{d:DesignInstance Type={x:Type VM:RepairViewModel}}">
     
@@ -15,7 +17,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
             <RowDefinition MaxHeight="500"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
@@ -28,26 +30,26 @@
                Grid.ColumnSpan="2"
                HorizontalAlignment="Center"
                Content="Название"
-               FontSize="16"/>
+               FontSize="18"/>
         <TextBox Grid.Row="1" 
                  Width="400"
                  IsReadOnly="True"
                  Text="{Binding Repair.Repair_name}"
-                 FontSize="16"
+                 FontSize="18"
                  Grid.ColumnSpan="2"/>
         <Label Content="Продолжительность"
                Grid.Column="0"
-               FontSize="16"
+               FontSize="18"
                HorizontalAlignment="Center"
                Grid.Row="2"/>
         <Label Content="Стоимость"
                Grid.Column="1"
-               FontSize="16"
+               FontSize="18"
                HorizontalAlignment="Center"
                Grid.Row="2"/>
         <TextBox Grid.Row="3"
                  Width="300"
-                 FontSize="16"
+                 FontSize="18"
                  IsReadOnly="True"
                  Text="{Binding Repair.Duration}"
                  Margin="10,0,10,0"
@@ -55,19 +57,20 @@
         <TextBox Grid.Row="3" 
                  Width="300"
                  IsReadOnly="True"
-                 FontSize="16"
+                 FontSize="18"
                  Margin="10,0,10,0"
                  Text="{Binding Repair.Cost}"
                  Grid.Column="1" />
         <Label Content="Примечания" Grid.Row="4"
                HorizontalAlignment="Center"
-               FontSize="16"
+               FontSize="18"
                Grid.ColumnSpan="2" Grid.Column="0"/>
         <TextBox Grid.Row="5" Grid.Column="0"
-                 Margin="10"
-                 FontSize="16"
+                 Margin="10,10,10,0"
+                 FontSize="18"
                  Grid.ColumnSpan="2"
                  IsReadOnly="True"
+                 TextWrapping="Wrap"
                  Text="{Binding Repair.Comment}"
                  >
         </TextBox>
@@ -75,14 +78,20 @@
                     Grid.ColumnSpan="2"
                     HorizontalAlignment="Center"
                     Orientation="Horizontal">
-            <Button Width="200"
+            <Button Width="300"
+                    FontSize="18"
                     Content="Вернуться к выбору типа ремонта"
-                    Click="Button_Click"
-                    Margin="10"/>
-            <Button Width="200"
+                    Click="Back_Click"
+                    Margin="10"
+                    x:Name="Back"/>
+            <Button Width="300"
+                    FontSize="18"
                     Content="Изменить данные по ремонту"
                     Margin="10"/>
-            <Button Width="200"
+            <Button Width="300"
+                    FontSize="18"
+                    x:Name="Services"
+                    Click="Services_Click"
                     Content="Данные по оказанным услугам"
                     Margin="10"/>
         </StackPanel>
