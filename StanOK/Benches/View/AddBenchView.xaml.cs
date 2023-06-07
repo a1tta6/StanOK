@@ -1,6 +1,4 @@
-﻿using StanOK.Benches.View;
-using StanOK.Benches.ViewModel;
-using StanOK.MainPage;
+﻿using StanOK.Benches.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,31 +13,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace StanOK.Benches
+namespace StanOK.Benches.View
 {
     /// <summary>
-    /// Логика взаимодействия для BenchesView.xaml
+    /// Логика взаимодействия для AddBenchView.xaml
     /// </summary>
-    public partial class BenchesView : Window
+    public partial class AddBenchView : Window
     {
-        BenchesViewModel ViewModel;
-        public BenchesView()
+        AddBenchViewModel ViewModel;
+        public AddBenchView()
         {
             InitializeComponent();
-            ViewModel = new BenchesViewModel();
+            ViewModel = new AddBenchViewModel(true);
             DataContext = ViewModel;
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void CanselButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddBenchView addBenchView = new AddBenchView();
-            addBenchView.ShowDialog();
-            ViewModel.BenchesList.Add(new Models.MachineModel());
+            ViewModel.Save();
+            this.Close();
         }
     }
 }

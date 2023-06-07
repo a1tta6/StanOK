@@ -13,8 +13,11 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding BenchesList}"
-                  AutoGenerateColumns="False" CanUserAddRows="False">
+        <DataGrid Grid.Row="0" 
+                  x:Name="BenchDataGrid"
+                  CanUserAddRows="False"
+                  ItemsSource="{Binding BenchesList}"
+                  AutoGenerateColumns="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="FontWeight" Value="Bold"/>
@@ -23,7 +26,11 @@
                 </Style>
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Width="auto" FontSize="18" Binding="{Binding Path=Id}" Header="Номер"/>
+                <DataGridTextColumn 
+                    Visibility="Collapsed"
+                    Width="auto" FontSize="18" 
+                    IsReadOnly="True" 
+                    Binding="{Binding Path=Id}" Header="Номер"/>
                 <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=MachineType}" Header="Вид станка"/>
                 <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Country}" Header="Страна"/>
                 <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Brand}" Header="Марка"/>
@@ -41,6 +48,11 @@
                     Margin="30,0,0,0"
                     FontSize="18" Height="60" Width="120"/>
             <Button Content="Добавить" FontSize="18" 
+                    Margin="30,0,0,0"
+                    x:Name="AddButton"
+                    Click="AddButton_Click"
+                    Height="60" Width="120"/>
+            <Button Content="Обновить" FontSize="18" 
                     Margin="30,0,0,0"
                     Height="60" Width="120"/>
         </StackPanel>
