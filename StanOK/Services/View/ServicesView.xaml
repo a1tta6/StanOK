@@ -25,8 +25,13 @@
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Width="70" FontSize="18"
+                                    IsReadOnly="True"
                                     Header="Номер" Binding="{Binding Path=Id}"/>
-                <DataGridTextColumn Width="auto" FontSize="18"
+              <DataGridComboBoxColumn Header="test">
+                
+              </DataGridComboBoxColumn>
+              
+              <DataGridTextColumn Width="auto" FontSize="18"
                                     Header="Вид станка" Binding="{Binding Path=MachineName}"/>
                 <DataGridTextColumn Width="auto"  FontSize="18"
                                     Header="Ремонт" Binding="{Binding Path=RepairName}"/>
@@ -51,7 +56,8 @@
             <Button Content="Обновить"
                     FontSize="18"
                     Margin="30,0,0,0"
-                    Height="50" Width="100"/>
+                    x:Name="Refresh"
+                    Height="50" Width="100" Click="Refresh_Click"/>
             <Button Content="Получить справку по видам станков"
                     Name="GetMachines"
                     Click="GetMachines_Click"

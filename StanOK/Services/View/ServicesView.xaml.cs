@@ -43,5 +43,10 @@ namespace StanOK.Services.View
         {
             this.Close();
         }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Refresh();
+        }
     }
 }

@@ -23,6 +23,14 @@ namespace StanOK.Services.ViewModel
                 pair.RepairName = context.RepairTypes.FirstOrDefault(x => x.Id == pair.RepairType).Repair_name;
             });
         }
+        public void Refresh()
+        {
+            //RepairModel.ForEach(pair => {
+            //    pair.Machine = context.Machines.FirstOrDefault(x => x.Id == pair.MachineType).MachineType;
+            //    pair.RepairName = context.RepairTypes.FirstOrDefault(x => x.Id == pair.RepairType).Repair_name;
+            //});
+            context.SaveChanges();
+        }
 
         #region INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
