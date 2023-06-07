@@ -15,9 +15,15 @@ namespace StanOK.Models
         [Column("id")]
         public int Id { get; set; }
         [Column("repair_name")]
-        public string Repair_name { get; set; }
+        public string Repair_name 
+        { 
+            get; 
+            set; }
         [Column("duration")]
-        public DateTime Duration { get; set; }
+        public string Duration 
+        { 
+            get; 
+            set; }
         [Column("cost")]
         public int Cost { get; set; }
         [Column("comment")]
