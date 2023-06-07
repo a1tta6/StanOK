@@ -33,7 +33,7 @@
                FontSize="18"/>
         <TextBox Grid.Row="1" 
                  Width="400"
-                 IsReadOnly="True"
+                 IsReadOnly="False"
                  Text="{Binding Repair.Repair_name}"
                  FontSize="18"
                  Grid.ColumnSpan="2"/>
@@ -50,13 +50,13 @@
         <TextBox Grid.Row="3"
                  Width="300"
                  FontSize="18"
-                 IsReadOnly="True"
+                 IsReadOnly="False"
                  Text="{Binding Repair.Duration}"
                  Margin="10,0,10,0"
                  Grid.Column="0" />
         <TextBox Grid.Row="3" 
                  Width="300"
-                 IsReadOnly="True"
+                 IsReadOnly="False"
                  FontSize="18"
                  Margin="10,0,10,0"
                  Text="{Binding Repair.Cost}"
@@ -69,7 +69,7 @@
                  Margin="10,10,10,0"
                  FontSize="18"
                  Grid.ColumnSpan="2"
-                 IsReadOnly="True"
+                 IsReadOnly="False"
                  TextWrapping="Wrap"
                  Text="{Binding Repair.Comment}"
                  >
@@ -87,6 +87,8 @@
             <Button Width="300"
                     FontSize="18"
                     Content="Изменить данные по ремонту"
+                    x:Name="ChangeInfo"
+                    Click="ChangeInfo_Click"
                     Margin="10"/>
             <Button Width="300"
                     FontSize="18"
@@ -95,9 +97,5 @@
                     Content="Данные по оказанным услугам"
                     Margin="10"/>
         </StackPanel>
-
-
-
-
     </Grid>
 </Window>

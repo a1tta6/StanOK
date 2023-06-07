@@ -18,6 +18,10 @@ namespace StanOK.Repair.ViewModel
         {
             Type = type;
         }
+        public void Changing()
+        {
+            context.SaveChanges();
+        }
 
     }
 }

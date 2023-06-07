@@ -41,5 +41,10 @@ namespace StanOK.Repair.View
             ServicesView ServicesWindow = new ServicesView();
             ServicesWindow.ShowDialog();
         }
+
+        private void ChangeInfo_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Changing();
+        }
     }
 }
