@@ -28,6 +28,7 @@ namespace StanOK.Benches
             InitializeComponent();
             ViewModel = new BenchesViewModel();
             DataContext = ViewModel;
+            ViewModel.LoadBenches();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -39,7 +40,17 @@ namespace StanOK.Benches
         {
             AddBenchView addBenchView = new AddBenchView();
             addBenchView.ShowDialog();
-            ViewModel.BenchesList.Add(new Models.MachineModel());
+        }
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Delete();
+            ViewModel.LoadBenches();
+        }
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            AddBenchView addBenchView = new AddBenchView(ViewModel.SelectedBench);
+            addBenchView.ShowDialog();
+            ViewModel.LoadBenches();
         }
     }
 }

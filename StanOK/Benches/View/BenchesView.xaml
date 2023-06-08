@@ -17,6 +17,9 @@
                   x:Name="BenchDataGrid"
                   CanUserAddRows="False"
                   ItemsSource="{Binding BenchesList}"
+                  SelectionMode="Single"
+                  SelectedItem="{Binding SelectedBench}"
+                  SelectionUnit="FullRow"
                   AutoGenerateColumns="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -45,6 +48,7 @@
                     FontSize="18" Height="60" 
                     Width="120" Click="BackButton_Click"/>
             <Button Content="Удалить" 
+                    Click="DeleteButton_Click"
                     Margin="30,0,0,0"
                     FontSize="18" Height="60" Width="120"/>
             <Button Content="Добавить" FontSize="18" 
@@ -52,8 +56,10 @@
                     x:Name="AddButton"
                     Click="AddButton_Click"
                     Height="60" Width="120"/>
-            <Button Content="Обновить" FontSize="18" 
+            <Button Content="Изменить" FontSize="18" 
                     Margin="30,0,0,0"
+                    x:Name="Update"
+                    Click="Update_Click"
                     Height="60" Width="120"/>
         </StackPanel>
 

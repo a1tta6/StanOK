@@ -1,4 +1,5 @@
 ﻿using StanOK.Benches.ViewModel;
+using StanOK.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,17 @@ namespace StanOK.Benches.View
         public AddBenchView()
         {
             InitializeComponent();
-            ViewModel = new AddBenchViewModel(true);
+            ViewModel = new AddBenchViewModel(true, null);
             DataContext = ViewModel;
+            ViewModel.OperType = "Добавить";
         }
-
+        public AddBenchView(MachineModel EditingMachine)
+        {
+            InitializeComponent();
+            ViewModel = new AddBenchViewModel(false, EditingMachine);
+            DataContext = ViewModel;
+            ViewModel.OperType = "Изменить";
+        }
         private void CanselButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -16,12 +16,16 @@ namespace StanOK.Models
         [Column("id")]
         public int Id { get; set; }
         [Column("machine_type")]
-        public string MachineType { get; set; }
+        public string MachineType { get; 
+            set; }
         [Column("country")]
-        public string Country { get; set; }
+        public string Country { get; 
+            set; }
         [Column("brand")]
-        public string Brand { get; set; }
+        public string Brand { get; 
+            set; }
         [Column("year")]
-        public int Year { get; set; }
+        public int Year { get; 
+            set; }
     }
 }
