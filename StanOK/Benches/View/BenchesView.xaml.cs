@@ -40,6 +40,7 @@ namespace StanOK.Benches
         {
             AddBenchView addBenchView = new AddBenchView();
             addBenchView.ShowDialog();
+            ViewModel.LoadBenches();
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
