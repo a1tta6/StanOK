@@ -28,6 +28,7 @@ namespace StanOK.Authorization.ViewModel
         {
             UserContext context = new UserContext();
             bool Success = context.Users.Any(x => x.Login == Login && x.Password == Password);
+            
             return Success;
         }
         #region INotifyPropertyChanged implementation
