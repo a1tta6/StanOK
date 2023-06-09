@@ -78,7 +78,7 @@
                 new RepairTypeModel
                 {
                     Id = 6,
-                    Repair_name = "Регулирвка станков",
+                    Repair_name = "Регулировка станков",
                     Cost = 5600,
                     Comment = "Регулировка станка на точность и обкатка под нагрузкой",
                     Duration = "3 дня"
