@@ -39,6 +39,11 @@ namespace StanOK.Benches.ViewModel
             get { return EditingBench.Year; }
             set { EditingBench.Year = value; NotifyPropertyChanged(); }
         }
+        public int Repairs
+        {
+            get { return EditingBench.Repairs; }
+            set { EditingBench.Repairs = value; NotifyPropertyChanged(); }
+        }
         public AddBenchViewModel(bool isNew, MachineModel EditingMachine)
         {
             if (EditingMachine != null)
@@ -63,6 +68,7 @@ namespace StanOK.Benches.ViewModel
                 userContext.Machines.First(x => x.Id == EditingBench.Id).MachineType = EditingBench.MachineType;
                 userContext.Machines.First(x => x.Id == EditingBench.Id).Country = EditingBench.Country;
                 userContext.Machines.First(x => x.Id == EditingBench.Id).Year = EditingBench.Year;
+                userContext.Machines.First(x => x.Id == EditingBench.Id).Repairs = EditingBench.Repairs;
 
 
                 userContext.SaveChanges();

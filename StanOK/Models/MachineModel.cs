@@ -27,5 +27,8 @@ namespace StanOK.Models
         [Column("year")]
         public int Year { get; 
             set; }
+        [Column("repairs")]
+        public int Repairs { get; set; }
+        
     }
 }

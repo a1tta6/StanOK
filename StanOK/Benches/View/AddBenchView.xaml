@@ -9,8 +9,10 @@
         ResizeMode="NoResize"
         d:DataContext="{d:DesignInstance Type={x:Type VM:BenchesViewModel}}"
         Title="{Binding Title}" Height="450" Width="400">
-    <Grid>
+    <Grid HorizontalAlignment="Center" Width="400" Height="416" VerticalAlignment="Top">
         <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -53,8 +55,18 @@
                  FontSize="18"
                  Text="{Binding Year, Mode=TwoWay}"
                  TextAlignment="Center"
-                 Margin="10,0,10,10"/>
-        <StackPanel Grid.Row="8" 
+                 Margin="0,4,0,6" HorizontalAlignment="Center" Width="380"/>
+        <Label FontSize="18" 
+               HorizontalAlignment="Center" 
+               Content="Ремонты" 
+               Grid.Row="8"/>
+        <TextBox Grid.Row="9" 
+                 FontSize="18"
+                 Text="{Binding Repairs, Mode=TwoWay}"
+                 TextAlignment="Center"
+                 Margin="0,4,0,6" HorizontalAlignment="Center" Width="380"/>
+
+        <StackPanel Grid.Row="10" 
                     Orientation="Horizontal"
                     HorizontalAlignment="Center">
             <Button Content="Отмена" 

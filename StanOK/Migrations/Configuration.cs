@@ -31,7 +31,7 @@
                     Repair_name = "Мелкий ремонт",
                     Cost = 5600,
                     Comment = "Ремонт малой продолжительности, c которым может справиться один мастер в течение рабочей смены",
-                    Duration = "8 часов"
+                    Duration = "1 день"
                 }
             );
             context.RepairTypes.Add(
@@ -85,10 +85,10 @@
 
                 }
             );
-            context.Machines.Add(new MachineModel { Id = 1, Year = 2007, Brand = "JET", MachineType = "Токарный", Country = "Швейцария" });
-            context.Machines.Add(new MachineModel { Id = 2, Year = 2020, Brand = "СНВШ-2", MachineType = "Сверлильный", Country = "Россия" });
-            context.Machines.Add(new MachineModel { Id = 3, Year = 2017, Brand = "CNC", MachineType = "Фрезировочный", Country = "Китай" });
-            context.Machines.Add(new MachineModel { Id = 4, Year = 2005, Brand = "TAKISAWA", MachineType = "Токарный", Country = "Япония" });
+            context.Machines.Add(new MachineModel { Id = 1, Year = 2007, Brand = "JET", MachineType = "Токарный", Country = "Швейцария", Repairs = 1 });
+            context.Machines.Add(new MachineModel { Id = 2, Year = 2020, Brand = "СНВШ-2", MachineType = "Сверлильный", Country = "Россия", Repairs = 5 });
+            context.Machines.Add(new MachineModel { Id = 3, Year = 2017, Brand = "CNC", MachineType = "Фрезировочный", Country = "Китай", Repairs = 2 });
+            context.Machines.Add(new MachineModel { Id = 4, Year = 2005, Brand = "TAKISAWA", MachineType = "Токарный", Country = "Япония", Repairs = 8 });
             context.Repairs.Add(new RepairModel { Id = 1, MachineType = 1, Comment = "Требуется заменить охлаждающую жидкость", DateBegin = DateTime.UtcNow, RepairType = 1 });
             context.Repairs.Add(new RepairModel { Id = 2, MachineType = 2, Comment = "Отрегулировать сверло", DateBegin = DateTime.UtcNow, RepairType = 6 });
             context.Repairs.Add(new RepairModel { Id = 3, MachineType = 3, Comment = "Заполнить маслом", DateBegin = DateTime.UtcNow, RepairType = 1 });
