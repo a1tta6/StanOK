@@ -38,6 +38,7 @@
                 <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Country}" Header="Страна"/>
                 <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Brand}" Header="Марка"/>
                 <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Year}" Header="Год"/>
+                <DataGridTextColumn Width="*" FontSize="18" Binding="{Binding Path=Repairs}" Header="Ремонты"/>
             </DataGrid.Columns>
         </DataGrid>
 
