@@ -361,7 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/StanOK/Migrations/202306081940569_postgres.cs
-/StanOK/Migrations/202306081940569_postgres.Designer.cs
-/StanOK/Migrations/202306081940569_postgres.resx
+/StanOK/Migrations
 /StanOK/App.config
