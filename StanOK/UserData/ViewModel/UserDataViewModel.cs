@@ -14,6 +14,23 @@ namespace StanOK.UserData.ViewModel
     {
         UserContext context = new UserContext();
         public List<LoginModel> LoginModel => context.Users.ToList();
+        public LoginModel SelectedUser { get; set; }
+        private List<LoginModel> _usersList;
+        public List<LoginModel> UsersList
+        {
+            get { return _usersList; }
+            set { _usersList = value; NotifyPropertyChanged(); }
+        }
+        public void Delete()
+        {
+            UserContext userContext = new UserContext();
+            userContext.Users.Remove(userContext.Users.First(x => x.Login == SelectedUser.Login));
+            userContext.SaveChanges();
+        }
+        public void LoadUsers()
+        {
+            UsersList = context.Users.ToList();
+        }
 
         #region INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;

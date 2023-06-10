@@ -1,4 +1,5 @@
 ﻿using StanOK.Authorization.ViewModel;
+using StanOK.UserData.View;
 using StanOK.MainPage.View;
 using StanOK.UserData.ViewModel;
 using System;
@@ -35,9 +36,24 @@ namespace StanOK.UserData.View
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            AddUserDataView addUserDataView = new AddUserDataView();
+            addUserDataView.ShowDialog();
+            ViewModel.LoadUsers();
+        }
 
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            AddUserDataView addUserDataView = new AddUserDataView(ViewModel.SelectedUser);
+            addUserDataView.ShowDialog();
+            ViewModel.LoadUsers();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Delete();
+            ViewModel.LoadUsers();
         }
     }
 }
