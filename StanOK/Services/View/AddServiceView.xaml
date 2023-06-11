@@ -1,0 +1,78 @@
+﻿<Window x:Class="StanOK.Services.View.AddServiceView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StanOK.Services.View"
+        xmlns:VM="clr-namespace:StanOK.Services.ViewModel"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type={x:Type VM:AddServiceViewModel}}"
+        Title="{Binding Title}" Height="450" Width="400">
+    <Grid HorizontalAlignment="Center" Width="400" Height="416" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Label FontSize="18" 
+               HorizontalAlignment="Center" 
+               Content="Вид станка" Grid.Row="0"/>
+        <ComboBox Grid.Row="1"
+                  FontSize="18"
+                  Margin="10,0,10,10"
+                  ItemsSource="{Binding BenchTypes, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedBench, Mode=TwoWay}"
+                  DisplayMemberPath="MachineType">
+        </ComboBox>
+        <Label FontSize="18" 
+               HorizontalAlignment="Center" 
+               Content="Ремонт" Grid.Row="2"/>
+        <ComboBox Grid.Row="3"
+                  FontSize="18"
+                  Margin="10,0,10,10"
+                  ItemsSource="{Binding RepairTypes, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedRepair, Mode=TwoWay}"
+                  DisplayMemberPath="Repair_name">
+        </ComboBox>
+        <Label FontSize="18" 
+               HorizontalAlignment="Center" Content="Дата начала" Grid.Row="4"/>
+        <DatePicker Grid.Row="5" 
+                    FontSize="18"
+                    SelectedDate="{Binding DateBegin, Mode=TwoWay}"
+                    Margin="10,0,10,10"/>
+
+
+        <Label FontSize="18" 
+               HorizontalAlignment="Center" 
+               Content="Примечание" 
+               Grid.Row="6"/>
+        <TextBox Grid.Row="7" 
+                 FontSize="18"
+                 Text="{Binding Comment, Mode=TwoWay}"
+                 TextAlignment="Center"
+                 Margin="0,4,0,6" HorizontalAlignment="Center" Width="380"/>
+        <StackPanel Grid.Row="8" 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Content="Отмена" 
+                    Margin="30,0,0,0"
+                    x:Name="CanselButton"
+                    FontSize="18" Height="30" 
+                    Width="120" Click="CanselButton_Click"/>
+            <Button Content="{Binding OperType}" FontSize="18" 
+                    Margin="30,0,0,0"
+                    x:Name="AddButton"
+                    IsDefault="True"
+                    Click="AddButton_Click"
+                    Height="30" Width="120"/>
+        </StackPanel>
+    </Grid>
+
+</Window>

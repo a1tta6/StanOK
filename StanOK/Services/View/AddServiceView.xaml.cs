@@ -1,5 +1,6 @@
 ﻿using StanOK.Benches.ViewModel;
 using StanOK.Models;
+using StanOK.Services.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,26 +15,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace StanOK.Benches.View
+namespace StanOK.Services.View
 {
     /// <summary>
-    /// Логика взаимодействия для AddBenchView.xaml
+    /// Логика взаимодействия для AddServiceView.xaml
     /// </summary>
-    public partial class AddBenchView : Window
+    public partial class AddServiceView : Window
     {
-        AddBenchViewModel ViewModel;
-        public AddBenchView()
+        AddServiceViewModel ViewModel;
+        public AddServiceView()
         {
             InitializeComponent();
-            ViewModel = new AddBenchViewModel(true, null);
+            ViewModel = new AddServiceViewModel(true, null);
             DataContext = ViewModel;
         }
-        public AddBenchView(MachineModel EditingMachine)
+        public AddServiceView(RepairModel EditingRepair)
         {
             InitializeComponent();
-            ViewModel = new AddBenchViewModel(false, EditingMachine);
+            ViewModel = new AddServiceViewModel(false, EditingRepair);
             DataContext = ViewModel;
         }
+
         private void CanselButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -15,6 +15,10 @@
                   ItemsSource="{Binding RepairModel}"
                   AutoGenerateColumns="False"
                   CanUserReorderColumns="False"
+                  SelectionMode="Single"
+                  SelectedItem="{Binding SelectedService}"
+                  SelectionUnit="FullRow"
+                  IsReadOnly="True"
                   CanUserAddRows="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -27,11 +31,8 @@
                 <DataGridTextColumn Width="70" FontSize="18"
                                     IsReadOnly="True"
                                     Header="Номер" Binding="{Binding Path=Id}"/>
-              <DataGridComboBoxColumn Header="test">
-                
-              </DataGridComboBoxColumn>
-              
-              <DataGridTextColumn Width="auto" FontSize="18"
+
+                <DataGridTextColumn Width="auto" FontSize="18"
                                     Header="Вид станка" Binding="{Binding Path=MachineName}"/>
                 <DataGridTextColumn Width="auto"  FontSize="18"
                                     Header="Ремонт" Binding="{Binding Path=RepairName}"/>
@@ -53,11 +54,6 @@
                     x:Name="BackButton"
                     Click="BackButton_Click"
                     Width="100"/>
-            <Button Content="Обновить"
-                    FontSize="18"
-                    Margin="30,0,0,0"
-                    x:Name="Refresh"
-                    Height="50" Width="100" Click="Refresh_Click"/>
             <Button Content="Получить справку по видам станков"
                     Name="GetMachines"
                     Click="GetMachines_Click"
@@ -65,14 +61,23 @@
                     HorizontalAlignment="Center" 
                     Margin="30,0,0,0"
                     Height="50" Width="350"/>
+            <Button Content="Изменить"
+                    FontSize="18"
+                    Margin="30,0,0,0"
+                    x:Name="Edit"
+                    Height="50" Width="auto" Click="Edit_Click"/>
             <Button Content="Удалить"
+                    x:Name="DeleteButton"
+                    Click="DeleteButton_Click"
                     FontSize="18"
                     Margin="30,0,0,0"
                     Height="50" Width="100"/>
             <Button Content="Добавить"
                     FontSize="18"
+                    x:Name="AddButton"
                     Margin="30,0,0,0"
-                    Height="50" Width="100"/>
+                    Height="50" Width="100"
+                    Click="AddButton_Click"/>
         </StackPanel>
         
 

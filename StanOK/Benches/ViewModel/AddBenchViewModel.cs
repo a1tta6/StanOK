@@ -49,8 +49,15 @@ namespace StanOK.Benches.ViewModel
             if (EditingMachine != null)
                 EditingBench = EditingMachine;
             if (isNew)
+            {
                 Title = "Добавление станка";
-            else Title = "Изменение станка";
+                OperType = "Добавить";
+            }
+            else
+            {
+                Title = "Изменение станка";
+                OperType = "Изменить";
+            }
         }
         public void Delete()
         {

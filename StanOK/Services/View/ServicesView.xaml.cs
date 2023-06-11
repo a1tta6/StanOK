@@ -1,4 +1,5 @@
 ﻿using StanOK.Benches;
+using StanOK.Benches.View;
 using StanOK.Repair.View;
 using StanOK.Services.ViewModel;
 using StanOK.UserData.ViewModel;
@@ -44,9 +45,24 @@ namespace StanOK.Services.View
             this.Close();
         }
 
-        private void Refresh_Click(object sender, RoutedEventArgs e)
+        private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.Refresh();
+            AddServiceView addServiceView = new AddServiceView(ViewModel.SelectedService);
+            addServiceView.ShowDialog();
+            ViewModel.LoadServices();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddServiceView addServiceView = new AddServiceView();
+            addServiceView.ShowDialog();
+            ViewModel.LoadServices();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.DeleteService();
+            ViewModel.LoadServices();
         }
     }
 }
