@@ -112,10 +112,6 @@
       <DependentUpon>BenchesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage\ViewModel\MainPageViewModel.cs" />
-    <Compile Include="Migrations\202306090506022_postgres.cs" />
-    <Compile Include="Migrations\202306090506022_postgres.designer.cs">
-      <DependentUpon>202306090506022_postgres.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MachineModel.cs" />
@@ -133,7 +129,11 @@
     <Compile Include="Services\View\ServicesView.xaml.cs">
       <DependentUpon>ServicesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserData\ViewModel\AddUserDataViewModel.cs" />
     <Compile Include="UserData\ViewModel\UserDataViewModel.cs" />
+    <Compile Include="UserData\View\AddUserDataView.xaml.cs">
+      <DependentUpon>AddUserDataView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserData\View\UserDataView.xaml.cs">
       <DependentUpon>UserDataView.xaml</DependentUpon>
     </Compile>
@@ -185,6 +185,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserData\View\AddUserDataView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserData\View\UserDataView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -204,9 +208,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202306090506022_postgres.resx">
-      <DependentUpon>202306090506022_postgres.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

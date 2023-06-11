@@ -11,8 +11,14 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" ItemsSource="{Binding LoginModel}" 
-                  AutoGenerateColumns="False" CanUserAddRows="False">
+        <DataGrid Grid.Row="0"
+                  x:Name="UserDataGrid"
+                  ItemsSource="{Binding LoginModel}"
+                  SelectionMode="Single"
+                  SelectedItem="{Binding SelectedUser}"
+                  SelectionUnit="FullRow"
+                  AutoGenerateColumns="False" 
+                  CanUserAddRows="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="FontWeight" Value="Bold"/>
@@ -50,19 +56,25 @@
                 Height="50" 
                 Width="100" 
                 FontSize="18"
-                Margin="80,0,0,0"
+                Margin="80,0,0,0" 
+                x:Name="Update"
+                Click="Update_Click"
                 />
             <Button Content="Удалить" HorizontalAlignment="Left" 
                 Height="50" 
                 Width="100" 
                 FontSize="18"
-                Margin="80,0,0,0"
+                Margin="80,0,0,0" 
+                x:Name="Delete"
+                Click="DeleteButton_Click"
                 />
             <Button Content="Добавить" HorizontalAlignment="Left" 
                 Height="50" 
                 Width="100" 
                 FontSize="18"
-                Margin="80,0,0,0"
+                Margin="80,0,0,0" 
+                x:Name="AddButton"
+                Click="AddButton_Click"
                 />
         </StackPanel>
 

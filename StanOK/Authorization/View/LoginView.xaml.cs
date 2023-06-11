@@ -37,6 +37,10 @@ namespace StanOK.Authorization.View
                 mainPageView.Show();
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Неверные данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error );
+            }
         }
     }
 }

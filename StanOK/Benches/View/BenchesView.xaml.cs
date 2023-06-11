@@ -49,9 +49,16 @@ namespace StanOK.Benches
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            AddBenchView addBenchView = new AddBenchView(ViewModel.SelectedBench);
-            addBenchView.ShowDialog();
-            ViewModel.LoadBenches();
+            if (ViewModel.SelectedBench == null)
+            {
+                MessageBox.Show("Станок не выбран!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                AddBenchView addBenchView = new AddBenchView(ViewModel.SelectedBench);
+                addBenchView.ShowDialog();
+                ViewModel.LoadBenches();
+            }
         }
     }
 }
