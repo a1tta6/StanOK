@@ -12,6 +12,8 @@ namespace StanOK.Authorization.Model
     public class LoginModel
     {
         [Key]
+        [Column("id")]
+        public int Id { get; set; }
         [Column("login")]
         public string Login 
         { 

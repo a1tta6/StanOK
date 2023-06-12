@@ -10,12 +10,19 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace StanOK.UserData.ViewModel
 {
     public class AddUserDataViewModel : INotifyPropertyChanged
     {
-        public LoginModel EditingUserData = new LoginModel();
+        private LoginModel _loginModel { get; set; }
+
+        public LoginModel EditingUserData
+        {
+            get { return _loginModel; }
+            set { _loginModel = value; NotifyPropertyChanged(); }
+        }
         public string Title { get; set; }
         public string OperType { get; set; }
 
@@ -36,11 +43,19 @@ namespace StanOK.UserData.ViewModel
         }
         public AddUserDataViewModel(bool isNew, LoginModel Login)
         {
-            if (EditingUserData != null)
+            if (Login != null)
                 EditingUserData = Login;
+            else EditingUserData = new LoginModel();
             if (isNew)
+            {
                 Title = "Добавление пользователя";
-            else Title = "Изменение пользователя";
+                OperType = "Добавить";
+            }
+            else
+            {
+                Title = "Изменение пользователя";
+                OperType = "Изменить";
+            }
         }
         public void Delete()
         {
@@ -51,21 +66,20 @@ namespace StanOK.UserData.ViewModel
         public void Save()
         {
             UserContext userContext = new UserContext();
-            if (EditingUserData.Login != null)
+            if (EditingUserData.Id != 0)
             {
 
-                userContext.Users.First(x => x.Login == EditingUserData.Login).Login = EditingUserData.Login;
-                userContext.Users.First(x => x.Login == EditingUserData.Login).Password = EditingUserData.Password;
-                userContext.Users.First(x => x.Login == EditingUserData.Login).Role = EditingUserData.Role;
-
-
+                userContext.Users.First(x => x.Id == EditingUserData.Id).Login = EditingUserData.Login;
+                userContext.Users.First(x => x.Id == EditingUserData.Id).Password = EditingUserData.Password;
+                userContext.Users.First(x => x.Id == EditingUserData.Id).Role = EditingUserData.Role;
                 userContext.SaveChanges();
-
+                MessageBox.Show("Аутентификационные данные изменены. Для продолжения работы необходимо заново авторизоваться", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
                 userContext.Users.Add(EditingUserData);
                 userContext.SaveChanges();
+                MessageBox.Show("Аутентификационные данные добавлены. Для продолжения работы необходимо заново авторизоваться", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
         #region INotifyPropertyChanged implementation

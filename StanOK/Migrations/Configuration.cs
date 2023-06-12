@@ -18,12 +18,12 @@
 
         protected override void Seed(StanOK.Utils.UserContext context)
         {
-            context.Users.Add(new LoginModel { Login = "user1", Role = "user", Password = "123" });
-            context.Users.Add(new LoginModel { Login = "user2", Role = "user", Password = "/Dtmj4B5Mg" });
-            context.Users.Add(new LoginModel { Login = "user3", Role = "user", Password = "l@lM}2rrG$" });
-            context.Users.Add(new LoginModel { Login = "user4", Role = "user", Password = "ioxzv9?kg7" });
-            context.Users.Add(new LoginModel { Login = "admin1", Role = "admin", Password = "321" });
-            context.Users.Add(new LoginModel { Login = "admin2", Role = "admin", Password = "SGk7pEJ4ij" });
+            context.Users.Add(new LoginModel { Id = 1, Login = "user1", Role = "user", Password = "123" });
+            context.Users.Add(new LoginModel { Id = 2, Login = "user2", Role = "user", Password = "/Dtmj4B5Mg" });
+            context.Users.Add(new LoginModel { Id = 3, Login = "user3", Role = "user", Password = "l@lM}2rrG$" });
+            context.Users.Add(new LoginModel { Id = 4, Login = "user4", Role = "user", Password = "ioxzv9?kg7" });
+            context.Users.Add(new LoginModel { Id = 5, Login = "admin1", Role = "admin", Password = "321" });
+            context.Users.Add(new LoginModel { Id = 6, Login = "admin2", Role = "admin", Password = "SGk7pEJ4ij" });
             context.RepairTypes.Add(
                 new RepairTypeModel
                 {

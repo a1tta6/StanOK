@@ -17,7 +17,8 @@
                   SelectionMode="Single"
                   SelectedItem="{Binding SelectedUser}"
                   SelectionUnit="FullRow"
-                  AutoGenerateColumns="False" 
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
                   CanUserAddRows="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -30,16 +31,16 @@
                 <DataGridTextColumn 
                     Header="Логин"
                     FontSize="18"
-                    Binding="{Binding  Path=Login}" Width="*" />
+                    Binding="{Binding  Path=Login, Mode=TwoWay}" Width="*" />
                 <DataGridTextColumn  
                     Header="Пароль"
                     FontSize="18"
-                    Binding="{Binding  Path=Password}" 
+                    Binding="{Binding  Path=Password, Mode=TwoWay}" 
                     Width="*" />
                 <DataGridTextColumn 
                     Header="Роль" 
                     FontSize="18"
-                    Binding="{Binding Path=Role}" 
+                    Binding="{Binding Path=Role, Mode=TwoWay}" 
                     Width="*" />
             </DataGrid.Columns>
         </DataGrid>
@@ -52,9 +53,9 @@
                 x:Name="Back"
                 Click="Back_Click"
                 />
-            <Button Content="Обновить" HorizontalAlignment="Left" 
+            <Button Content="Редактировать" HorizontalAlignment="Left" 
                 Height="50" 
-                Width="100" 
+                Width="auto" 
                 FontSize="18"
                 Margin="80,0,0,0" 
                 x:Name="Update"

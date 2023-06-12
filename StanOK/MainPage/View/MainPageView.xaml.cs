@@ -47,7 +47,13 @@ namespace StanOK.MainPage.View
         private void ShowUsersButton_Click(object sender, RoutedEventArgs e)
         {
             UserData.View.UserDataView userdataView = new UserData.View.UserDataView();
-            userdataView.ShowDialog();
+            bool? answ = userdataView.ShowDialog();
+            if ((bool)answ)
+            {
+                LoginView loginView = new LoginView();
+                loginView.Show();
+                this.Close();
+            }
         }
     }
 }

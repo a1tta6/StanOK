@@ -28,23 +28,23 @@ namespace StanOK.UserData.View
             InitializeComponent();
             ViewModel = new AddUserDataViewModel(true, null);
             DataContext = ViewModel;
-            ViewModel.OperType = "Добавить";
         }
         public AddUserDataView(LoginModel EditingUserData)
         {
             InitializeComponent();
             ViewModel = new AddUserDataViewModel(false, EditingUserData);
             DataContext = ViewModel;
-            ViewModel.OperType = "Изменить";
         }
         private void CanselButton_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
             this.Close();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.Save();
+            this.DialogResult = true;
             this.Close();
         }
     }

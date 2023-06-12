@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace StanOK.UserData.ViewModel
 {
@@ -23,9 +24,12 @@ namespace StanOK.UserData.ViewModel
         }
         public void Delete()
         {
-            UserContext userContext = new UserContext();
-            userContext.Users.Remove(userContext.Users.First(x => x.Login == SelectedUser.Login));
-            userContext.SaveChanges();
+            if (SelectedUser != null)
+            {
+                context.Users.Remove(context.Users.First(x => x.Id == SelectedUser.Id));
+                context.SaveChanges();
+                MessageBox.Show("Аутентификационные данные удалены.\nДля продолжения работы необходимо авторизоваться заново.", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
         public void LoadUsers()
         {
