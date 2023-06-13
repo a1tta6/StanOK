@@ -14,9 +14,12 @@ namespace StanOK.Repair.ViewModel
         string Type;
         public UserContext context = new UserContext();
         public RepairTypeModel Repair => context.RepairTypes.First(x => x.Repair_name == Type);
+        public bool IsReadOnly { get; set; }
+        public bool CanEdit { get; set; }
         public RepairViewModel(string type)
         {
             Type = type;
+            IsReadOnly = true;
         }
         public void Changing()
         {

@@ -79,7 +79,5 @@
                     Height="50" Width="100"
                     Click="AddButton_Click"/>
         </StackPanel>
-        
-
     </Grid>
 </Window>

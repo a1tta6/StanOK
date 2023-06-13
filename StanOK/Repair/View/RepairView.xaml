@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:StanOK.Repair.View"
         mc:Ignorable="d"
         Title="Окно данных по ремонту" Height="450" Width="800"
-        MinWidth="1000"
+        MinWidth="1200"
         MinHeight="450"
         xmlns:VM="clr-namespace:StanOK.Repair.ViewModel"
         d:DataContext="{d:DesignInstance Type={x:Type VM:RepairViewModel}}">
@@ -33,7 +33,7 @@
                FontSize="18"/>
         <TextBox Grid.Row="1" 
                  Width="400"
-                 IsReadOnly="False"
+                 IsReadOnly="True"
                  Text="{Binding Repair.Repair_name}"
                  FontSize="18"
                  Grid.ColumnSpan="2"/>
@@ -50,13 +50,13 @@
         <TextBox Grid.Row="3"
                  Width="300"
                  FontSize="18"
-                 IsReadOnly="False"
+                 IsReadOnly="{Binding IsReadOnly}"
                  Text="{Binding Repair.Duration}"
                  Margin="10,0,10,0"
                  Grid.Column="0" />
         <TextBox Grid.Row="3" 
                  Width="300"
-                 IsReadOnly="False"
+                 IsReadOnly="{Binding IsReadOnly}"
                  FontSize="18"
                  Margin="10,0,10,0"
                  Text="{Binding Repair.Cost}"
@@ -69,7 +69,7 @@
                  Margin="10,10,10,0"
                  FontSize="18"
                  Grid.ColumnSpan="2"
-                 IsReadOnly="False"
+                 IsReadOnly="{Binding IsReadOnly}"
                  TextWrapping="Wrap"
                  Text="{Binding Repair.Comment}"
                  >
@@ -88,6 +88,7 @@
                     FontSize="18"
                     Content="Изменить данные по ремонту"
                     x:Name="ChangeInfo"
+                    IsEnabled="{Binding CanEdit}"
                     Click="ChangeInfo_Click"
                     Margin="10"/>
             <Button Width="300"
@@ -96,6 +97,15 @@
                     Click="Services_Click"
                     Content="Данные по оказанным услугам"
                     Margin="10"/>
+            <StackPanel Margin="3" Orientation="Vertical">
+                <Label Content="Режим" FontSize="18"/>
+                <RadioButton Content="Просмотр"
+                             IsChecked="{Binding IsReadOnly}"
+                             FontSize="18"/>
+                <RadioButton Content="Редактирование"
+                             IsChecked="{Binding CanEdit}"
+                             FontSize="18"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

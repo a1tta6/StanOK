@@ -30,6 +30,8 @@
             FontSize="18"
             TextAlignment="Center"
             Margin="10" Grid.Row="3"/>
-        <Button Grid.Row="4" Width="100" Click="Button_Click" Content="Войти" FontSize="18"/>
+        <Button Grid.Row="4" Width="100" Click="Button_Click" 
+                IsDefault="True"
+                Content="Войти" FontSize="18"/>
     </Grid>
 </Window>
