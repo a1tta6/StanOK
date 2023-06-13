@@ -42,6 +42,7 @@
             <Button Margin="20" 
                     Width="250"
                     x:Name="ShowUsersButton"
+                    Visibility="{Binding ShowUserVisibility}"
                     Click="ShowUsersButton_Click"
                     Content="Просмотреть пользователей" 
                     FontSize="16"/>

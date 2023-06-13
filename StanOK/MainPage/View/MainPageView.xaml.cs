@@ -22,17 +22,19 @@ namespace StanOK.MainPage.View
     {
         MainPageViewModel ViewModel;
 
-        public MainPageView()
+        bool IsAdmin;
+        public MainPageView(bool IsAdmin)
         {
             InitializeComponent();
-            ViewModel = new MainPageViewModel();
+            this.IsAdmin = IsAdmin;
+            ViewModel = new MainPageViewModel(this.IsAdmin);
             DataContext = ViewModel;
         }
 
         private void RepairType_Click(object sender, RoutedEventArgs e)
         {
             string type = (sender as Button).Content.ToString();
-            Repair.View.RepairView repairView = new Repair.View.RepairView(type);
+            Repair.View.RepairView repairView = new Repair.View.RepairView(type, IsAdmin);
             repairView.ShowDialog();
         }
 

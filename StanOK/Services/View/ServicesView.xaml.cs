@@ -28,17 +28,19 @@ namespace StanOK.Services.View
     {
         ServicesViewModel ViewModel;
         int RepairId;
-        public ServicesView(int RepairId)
+        bool IsAdmin;
+        public ServicesView(int RepairId, bool IsAdmin)
         {
             this.RepairId = RepairId;
+            this.IsAdmin = IsAdmin;
             InitializeComponent();
-            ViewModel = new ServicesViewModel(this.RepairId);
+            ViewModel = new ServicesViewModel(this.RepairId, this.IsAdmin);
             DataContext = ViewModel;
         }
 
         private void GetMachines_Click(object sender, RoutedEventArgs e)
         {
-            BenchesView benchesView = new BenchesView();
+            BenchesView benchesView = new BenchesView(IsAdmin);
             benchesView.ShowDialog(); 
         }
 

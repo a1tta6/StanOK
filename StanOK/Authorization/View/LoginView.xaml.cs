@@ -38,7 +38,7 @@ namespace StanOK.Authorization.View
                     if (User != null)
                     {
                         MessageBox.Show("Пользователь авторизовался", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-                        MainPage.View.MainPageView mainPageView = new MainPage.View.MainPageView();
+                        MainPage.View.MainPageView mainPageView = new MainPage.View.MainPageView(User.Role == "admin" ? true : false);
                         mainPageView.Show();
                         this.Close();
                     }

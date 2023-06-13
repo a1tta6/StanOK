@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace StanOK.Benches.ViewModel
 {
@@ -21,6 +22,12 @@ namespace StanOK.Benches.ViewModel
             get { return _benchesList; }
             set { _benchesList = value; NotifyPropertyChanged(); }
         }
+        private Visibility _elementVisibility;
+        public Visibility ElementVisibility
+        {
+            get { return _elementVisibility; }
+            set { _elementVisibility = value; NotifyPropertyChanged(); }
+        }
         public void Delete()
         {
             UserContext userContext = new UserContext();
@@ -30,6 +37,12 @@ namespace StanOK.Benches.ViewModel
         public void LoadBenches()
         {
             BenchesList = context.Machines.ToList();
+        }
+        public BenchesViewModel(bool IsAdmin)
+        {
+            if (IsAdmin)
+                ElementVisibility = Visibility.Visible;
+            else ElementVisibility = Visibility.Collapsed;
         }
         #region INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;

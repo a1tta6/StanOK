@@ -20,6 +20,7 @@
                   SelectionMode="Single"
                   SelectedItem="{Binding SelectedBench}"
                   SelectionUnit="FullRow"
+                  IsReadOnly="True"
                   AutoGenerateColumns="False">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -49,17 +50,20 @@
                     FontSize="18" Height="60" 
                     Width="120" Click="BackButton_Click"/>
             <Button Content="Удалить" 
+                    Visibility="{Binding ElementVisibility}"
                     Click="DeleteButton_Click"
                     Margin="30,0,0,0"
                     FontSize="18" Height="60" Width="120"/>
             <Button Content="Добавить" FontSize="18" 
                     Margin="30,0,0,0"
                     x:Name="AddButton"
+                    Visibility="{Binding ElementVisibility}"
                     Click="AddButton_Click"
                     Height="60" Width="120"/>
             <Button Content="Изменить" FontSize="18" 
                     Margin="30,0,0,0"
                     x:Name="Update"
+                    Visibility="{Binding ElementVisibility}"
                     Click="Update_Click"
                     Height="60" Width="120"/>
         </StackPanel>

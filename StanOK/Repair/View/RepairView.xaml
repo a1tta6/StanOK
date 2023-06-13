@@ -88,6 +88,7 @@
                     FontSize="18"
                     Content="Изменить данные по ремонту"
                     x:Name="ChangeInfo"
+                    Visibility="{Binding ElementVisibility}"
                     IsEnabled="{Binding CanEdit}"
                     Click="ChangeInfo_Click"
                     Margin="10"/>
@@ -97,7 +98,8 @@
                     Click="Services_Click"
                     Content="Данные по оказанным услугам"
                     Margin="10"/>
-            <StackPanel Margin="3" Orientation="Vertical">
+            <StackPanel Margin="3" Orientation="Vertical"
+                        Visibility="{Binding ElementVisibility}">
                 <Label Content="Режим" FontSize="18"/>
                 <RadioButton Content="Просмотр"
                              IsChecked="{Binding IsReadOnly}"

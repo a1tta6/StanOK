@@ -23,8 +23,20 @@ namespace StanOK.Services.ViewModel
             get { return _repairModel; }
             set { _repairModel = value; NotifyPropertyChanged(); }
         }
-        public ServicesViewModel(int RepairId)
+
+        private Visibility _elementVisibility;
+        public Visibility ElementVisibility
         {
+            get { return _elementVisibility; }
+            set { _elementVisibility = value; NotifyPropertyChanged(); }
+        }
+
+        public ServicesViewModel(int RepairId, bool IsAdmin)
+        {
+            if (IsAdmin)
+                ElementVisibility = Visibility.Visible;
+            else ElementVisibility = Visibility.Collapsed;
+
             LoadServices(RepairId);
         }
         public void LoadServices(int RepairId)

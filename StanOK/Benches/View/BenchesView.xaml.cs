@@ -23,10 +23,12 @@ namespace StanOK.Benches
     public partial class BenchesView : Window
     {
         BenchesViewModel ViewModel;
-        public BenchesView()
+        bool IsAdmin;
+        public BenchesView(bool isAdmin)
         {
             InitializeComponent();
-            ViewModel = new BenchesViewModel();
+            IsAdmin = isAdmin;
+            ViewModel = new BenchesViewModel(IsAdmin);
             DataContext = ViewModel;
             ViewModel.LoadBenches();
         }

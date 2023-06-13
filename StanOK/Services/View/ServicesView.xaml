@@ -64,10 +64,12 @@
             <Button Content="Изменить"
                     FontSize="18"
                     Margin="30,0,0,0"
+                    Visibility="{Binding ElementVisibility}"
                     x:Name="Edit"
                     Height="50" Width="auto" Click="Edit_Click"/>
             <Button Content="Удалить"
                     x:Name="DeleteButton"
+                    Visibility="{Binding ElementVisibility}"
                     Click="DeleteButton_Click"
                     FontSize="18"
                     Margin="30,0,0,0"
@@ -75,6 +77,7 @@
             <Button Content="Добавить"
                     FontSize="18"
                     x:Name="AddButton"
+                    Visibility="{Binding ElementVisibility}"
                     Margin="30,0,0,0"
                     Height="50" Width="100"
                     Click="AddButton_Click"/>

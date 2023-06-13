@@ -23,10 +23,12 @@ namespace StanOK.Repair.View
     public partial class RepairView : Window
     {
         RepairViewModel ViewModel;
-        public RepairView(string type)
+        bool IsAdmin;
+        public RepairView(string type, bool IsAdmin)
         {
             InitializeComponent();
-            ViewModel = new RepairViewModel(type);
+            this.IsAdmin = IsAdmin;
+            ViewModel = new RepairViewModel(type, this.IsAdmin);
             DataContext = ViewModel;
         }
 
@@ -37,7 +39,7 @@ namespace StanOK.Repair.View
 
         private void Services_Click(object sender, RoutedEventArgs e)
         {
-            ServicesView ServicesWindow = new ServicesView(ViewModel.Repair.Id);
+            ServicesView ServicesWindow = new ServicesView(ViewModel.Repair.Id, IsAdmin);
             ServicesWindow.ShowDialog();
         }
 
