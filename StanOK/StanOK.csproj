@@ -102,7 +102,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Authorization\ViewModel\AuthorizationViewModel.cs" />
     <Compile Include="Benches\ViewModel\AddBenchViewModel.cs" />
     <Compile Include="Benches\ViewModel\BenchesViewModel.cs" />
     <Compile Include="Benches\View\AddBenchView.xaml.cs">
@@ -112,9 +111,9 @@
       <DependentUpon>BenchesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage\ViewModel\MainPageViewModel.cs" />
-    <Compile Include="Migrations\202306130638236_postgres.cs" />
-    <Compile Include="Migrations\202306130638236_postgres.designer.cs">
-      <DependentUpon>202306130638236_postgres.cs</DependentUpon>
+    <Compile Include="Migrations\202306131711469_postgres.cs" />
+    <Compile Include="Migrations\202306131711469_postgres.designer.cs">
+      <DependentUpon>202306131711469_postgres.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginModel.cs" />
@@ -212,8 +211,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202306130638236_postgres.resx">
-      <DependentUpon>202306130638236_postgres.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202306131711469_postgres.resx">
+      <DependentUpon>202306131711469_postgres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

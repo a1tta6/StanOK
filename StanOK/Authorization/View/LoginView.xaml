@@ -3,34 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:VM="clr-namespace:StanOK.Authorization.ViewModel"
         xmlns:local="clr-namespace:StanOK.Authorization.View"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Height="280" Width="400"
-        Title="Авторизации"
-        d:DataContext="{d:DesignInstance Type={x:Type VM:AuthorizationViewModel}}">
+        Title="Авторизации">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Label HorizontalAlignment="Center" Grid.Row="0" Content="Логин:" FontSize="18"/>
-        <TextBox Text="{Binding Login, Mode=TwoWay}"
+        <TextBox 
                  FontSize="18"
+                 x:Name="textBox_login"
                  TextAlignment="Center"
                  Margin="10" Grid.Row="1"/>
         <Label HorizontalAlignment="Center" Grid.Row="2" Content="Пароль:" FontSize="18"/>
-        <TextBox 
-            Text="{Binding Password, Mode=TwoWay}" 
+        <PasswordBox
+            x:Name="password"
+            HorizontalContentAlignment="Center"
             FontSize="18"
-            TextAlignment="Center"
             Margin="10" Grid.Row="3"/>
-        <Button Grid.Row="4" Width="100" Click="Button_Click" 
+        <Button Grid.Row="4" Width="100"
+                x:Name="Enter"
+                Click="Enter_Click"
                 IsDefault="True"
                 Content="Войти" FontSize="18"/>
     </Grid>

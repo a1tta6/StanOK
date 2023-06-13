@@ -1,5 +1,4 @@
-﻿using StanOK.Authorization.ViewModel;
-using StanOK.MainPage.View;
+﻿using StanOK.MainPage.View;
 using StanOK.Repair.ViewModel;
 using StanOK.Services.View;
 using System;

@@ -1,5 +1,4 @@
-﻿using StanOK.Authorization.ViewModel;
-using StanOK.UserData.View;
+﻿using StanOK.UserData.View;
 using StanOK.MainPage.View;
 using StanOK.UserData.ViewModel;
 using System;

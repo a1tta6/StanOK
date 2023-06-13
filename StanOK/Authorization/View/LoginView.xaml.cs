@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using StanOK.Authorization.Model;
-using StanOK.Authorization.ViewModel;
+using StanOK.Utils;
 
 namespace StanOK.Authorization.View
 {
@@ -21,26 +22,31 @@ namespace StanOK.Authorization.View
     /// </summary>
     public partial class LoginView : Window
     {
-        AuthorizationViewModel ViewModel;
         public LoginView()
         {
             InitializeComponent();
-            ViewModel = new AuthorizationViewModel();
-            DataContext = ViewModel;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            if (ViewModel.Authorizaton())
+            if (textBox_login.Text.Length > 0)   
             {
-                MainPage.View.MainPageView mainPageView = new MainPage.View.MainPageView();
-                mainPageView.Show();
-                this.Close();
+                if (password.Password.Length > 0)         
+                { 
+                    UserContext context = new UserContext();
+                    var User = context.Users.FirstOrDefault(x => x.Login == textBox_login.Text && x.Password == password.Password);
+                    if (User != null)
+                    {
+                        MessageBox.Show("Пользователь авторизовался", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MainPage.View.MainPageView mainPageView = new MainPage.View.MainPageView();
+                        mainPageView.Show();
+                        this.Close();
+                    }
+                    else MessageBox.Show("Пользователь не найден", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error); 
+                }
+                else MessageBox.Show("Введите пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Exclamation);  
             }
-            else
-            {
-                MessageBox.Show("Неверные данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error );
-            }
+            else MessageBox.Show("Введите логин", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
     }
 }
