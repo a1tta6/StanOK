@@ -38,7 +38,7 @@ namespace StanOK.Repair.View
 
         private void Services_Click(object sender, RoutedEventArgs e)
         {
-            ServicesView ServicesWindow = new ServicesView();
+            ServicesView ServicesWindow = new ServicesView(ViewModel.Repair.Id);
             ServicesWindow.ShowDialog();
         }
 

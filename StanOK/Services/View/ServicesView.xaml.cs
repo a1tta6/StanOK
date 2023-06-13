@@ -27,10 +27,12 @@ namespace StanOK.Services.View
     public partial class ServicesView : Window
     {
         ServicesViewModel ViewModel;
-        public ServicesView()
+        int RepairId;
+        public ServicesView(int RepairId)
         {
+            this.RepairId = RepairId;
             InitializeComponent();
-            ViewModel = new ServicesViewModel();
+            ViewModel = new ServicesViewModel(this.RepairId);
             DataContext = ViewModel;
         }
 
@@ -49,20 +51,20 @@ namespace StanOK.Services.View
         {
             AddServiceView addServiceView = new AddServiceView(ViewModel.SelectedService);
             addServiceView.ShowDialog();
-            ViewModel.LoadServices();
+            ViewModel.LoadServices(RepairId);
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             AddServiceView addServiceView = new AddServiceView();
             addServiceView.ShowDialog();
-            ViewModel.LoadServices();
+            ViewModel.LoadServices(RepairId);
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.DeleteService();
-            ViewModel.LoadServices();
+            ViewModel.LoadServices(RepairId);
         }
     }
 }

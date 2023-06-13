@@ -23,13 +23,13 @@ namespace StanOK.Services.ViewModel
             get { return _repairModel; }
             set { _repairModel = value; NotifyPropertyChanged(); }
         }
-        public ServicesViewModel()
+        public ServicesViewModel(int RepairId)
         {
-            LoadServices();
+            LoadServices(RepairId);
         }
-        public void LoadServices()
+        public void LoadServices(int RepairId)
         {
-            RepairModel = context.Repairs.ToList();
+            RepairModel = context.Repairs.Where(x => x.RepairType == RepairId).ToList();
             RepairModel.ForEach(pair => {
                 pair.MachineName = context.Machines.FirstOrDefault(x => x.Id == pair.MachineType).MachineType;
                 pair.RepairName = context.RepairTypes.FirstOrDefault(x => x.Id == pair.RepairType).Repair_name;
