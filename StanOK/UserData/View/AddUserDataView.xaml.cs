@@ -43,9 +43,13 @@ namespace StanOK.UserData.View
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.Save();
-            this.DialogResult = true;
-            this.Close();
+            bool flag;
+            flag = ViewModel.Save();
+            if (flag)
+            {
+                this.DialogResult = true;
+                this.Close();
+            }
         }
     }
 }

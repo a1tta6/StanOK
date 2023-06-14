@@ -63,10 +63,46 @@ namespace StanOK.UserData.ViewModel
             userContext.Users.Remove(EditingUserData);
             userContext.SaveChanges();
         }
-        public void Save()
+        public bool Save()
         {
+            bool bo = true;
+            {
+                if (Password != null)
+                {
+                    if (Password.Length >= 10)
+                    {
+                        bool fl_A = false;
+                        bool fl_a = false;
+                        bool fl_1 = false;
+                        bool fl__ = false;
+                        int a = Password.Length;
+                        for (int i = 0; i < a; i++)
+                        {
+                            if ('A' <= Password[i] && Password[i] <= 'Z')
+                            {
+                                fl_A = true;
+                            }
+                            else if ('a' <= Password[i] && Password[i] <= 'z')
+                            {
+                                fl_a = true;
+                            }
+                            else if ('0' <= Password[i] && Password[i] <= '9')
+                            {
+                                fl_1 = true;
+                            }
+                            else 
+                            { 
+                                fl__ = true; 
+                            }
+                        }
+                        bo = fl_A && fl_a && fl_1 && fl__;
+                    }
+                    else bo = false;
+                }
+                else bo = false;
+            }
             UserContext userContext = new UserContext();
-            if (EditingUserData.Id != 0)
+            if (EditingUserData.Id != 0 && bo)
             {
 
                 userContext.Users.First(x => x.Id == EditingUserData.Id).Login = EditingUserData.Login;
@@ -74,12 +110,19 @@ namespace StanOK.UserData.ViewModel
                 userContext.Users.First(x => x.Id == EditingUserData.Id).Role = EditingUserData.Role;
                 userContext.SaveChanges();
                 MessageBox.Show("Аутентификационные данные изменены. Для продолжения работы необходимо заново авторизоваться", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                return true;
             }
             else
             {
-                userContext.Users.Add(EditingUserData);
-                userContext.SaveChanges();
-                MessageBox.Show("Аутентификационные данные добавлены. Для продолжения работы необходимо заново авторизоваться", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (bo)
+                {
+                    userContext.Users.Add(EditingUserData);
+                    userContext.SaveChanges();
+                    MessageBox.Show("Аутентификационные данные добавлены. Для продолжения работы необходимо заново авторизоваться", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return true;
+                }
+                else MessageBox.Show("Пароль не соответствует требованиям безопасности", "Ошибка пароля", MessageBoxButton.OK, MessageBoxImage.Information);
+                return false;
             }
         }
         #region INotifyPropertyChanged implementation
