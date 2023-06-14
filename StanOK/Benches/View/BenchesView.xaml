@@ -57,7 +57,6 @@
             <Button Content="Добавить" FontSize="18" 
                     Margin="30,0,0,0"
                     x:Name="AddButton"
-                    Visibility="{Binding ElementVisibility}"
                     Click="AddButton_Click"
                     Height="60" Width="120"/>
             <Button Content="Изменить" FontSize="18" 
