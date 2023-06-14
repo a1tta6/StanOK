@@ -53,7 +53,7 @@
                 x:Name="Back"
                 Click="Back_Click"
                 />
-            <Button Content="Редактировать" HorizontalAlignment="Left" 
+            <Button Content="Изменить" HorizontalAlignment="Left" 
                 Height="50" 
                 Width="auto" 
                 FontSize="18"

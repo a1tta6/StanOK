@@ -54,6 +54,12 @@
                     x:Name="BackButton"
                     Click="BackButton_Click"
                     Width="100"/>
+            <Button Content="Изменить"
+                    FontSize="18"
+                    Margin="30,0,0,0"
+                    Visibility="{Binding ElementVisibility}"
+                    x:Name="Edit"
+                    Height="50" Width="auto" Click="Edit_Click"/>
             <Button Content="Получить справку по видам станков"
                     Name="GetMachines"
                     Click="GetMachines_Click"
@@ -61,12 +67,6 @@
                     HorizontalAlignment="Center" 
                     Margin="30,0,0,0"
                     Height="50" Width="350"/>
-            <Button Content="Изменить"
-                    FontSize="18"
-                    Margin="30,0,0,0"
-                    Visibility="{Binding ElementVisibility}"
-                    x:Name="Edit"
-                    Height="50" Width="auto" Click="Edit_Click"/>
             <Button Content="Удалить"
                     x:Name="DeleteButton"
                     Visibility="{Binding ElementVisibility}"
