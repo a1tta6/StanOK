@@ -31,10 +31,11 @@ namespace StanOK.UserData.ViewModel
             get { return EditingUserData.Login; }
             set { EditingUserData.Login = value; NotifyPropertyChanged(); }
         }
+        private string _password;
         public string Password
         {
-            get { return EditingUserData.Password; }
-            set { EditingUserData.Password = value; NotifyPropertyChanged(); }
+            get { return _password; }
+            set { _password = value; NotifyPropertyChanged(); }
         }
         public string Role
         {
@@ -44,7 +45,10 @@ namespace StanOK.UserData.ViewModel
         public AddUserDataViewModel(bool isNew, LoginModel Login)
         {
             if (Login != null)
+            {
                 EditingUserData = Login;
+                Password = EditingUserData.DecryptedPassword;
+            }
             else EditingUserData = new LoginModel();
             if (isNew)
             {
@@ -106,7 +110,7 @@ namespace StanOK.UserData.ViewModel
             {
 
                 userContext.Users.First(x => x.Id == EditingUserData.Id).Login = EditingUserData.Login;
-                userContext.Users.First(x => x.Id == EditingUserData.Id).Password = EditingUserData.Password;
+                userContext.Users.First(x => x.Id == EditingUserData.Id).Password = Encryption.Encrypt(Password);
                 userContext.Users.First(x => x.Id == EditingUserData.Id).Role = EditingUserData.Role;
                 userContext.SaveChanges();
                 MessageBox.Show("Аутентификационные данные изменены. Для продолжения работы необходимо заново авторизоваться", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -35,7 +35,7 @@
                 <DataGridTextColumn  
                     Header="Пароль"
                     FontSize="18"
-                    Binding="{Binding  Path=Password, Mode=TwoWay}" 
+                    Binding="{Binding  Path=DecryptedPassword}" 
                     Width="*" />
                 <DataGridTextColumn 
                     Header="Роль" 

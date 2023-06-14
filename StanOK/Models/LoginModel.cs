@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StanOK.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,12 +22,9 @@ namespace StanOK.Authorization.Model
             set; 
         }
         [Column("password")]
-        public string Password 
-        { 
-            get; 
-            set; 
-        }
+        public string Password { get; set; }
         [Column("Role")]
         public string Role { get; set; }
+        public string DecryptedPassword => Encryption.Decrypt(Password);
     }
 }

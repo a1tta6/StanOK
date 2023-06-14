@@ -29,12 +29,14 @@ namespace StanOK.Authorization.View
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
+
             if (textBox_login.Text.Length > 0)   
             {
                 if (password.Password.Length > 0)         
                 { 
                     UserContext context = new UserContext();
-                    var User = context.Users.FirstOrDefault(x => x.Login == textBox_login.Text && x.Password == password.Password);
+                    string encryptedPassword = Encryption.Encrypt(password.Password);
+                    var User = context.Users.FirstOrDefault(x => x.Login == textBox_login.Text && x.Password == encryptedPassword);
                     if (User != null)
                     {
                         MessageBox.Show("Пользователь авторизовался", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
