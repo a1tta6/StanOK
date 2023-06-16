@@ -115,6 +115,7 @@ namespace StanOK.UserData.ViewModel
             {
                 if (PasswordIsOK)
                 {
+                    EditingUserData.Password = Encryption.Encrypt(Password);
                     userContext.Users.Add(EditingUserData);
                     userContext.SaveChanges();
                     MessageBox.Show("Аутентификационные данные добавлены. Для продолжения работы необходимо заново авторизоваться", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
