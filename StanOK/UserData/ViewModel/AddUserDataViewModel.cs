@@ -11,6 +11,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace StanOK.UserData.ViewModel
 {
@@ -37,6 +38,10 @@ namespace StanOK.UserData.ViewModel
             get { return _password; }
             set { _password = value; NotifyPropertyChanged(); }
         }
+
+
+            //        <ComboBoxItem IsSelected = "True" Content="user"/>
+            //<ComboBoxItem Content = "admin" />
         public string Role
         {
             get { return EditingUserData.Role; }
