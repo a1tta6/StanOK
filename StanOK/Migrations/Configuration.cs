@@ -94,6 +94,19 @@
             context.Repairs.Add(new RepairModel { Id = 2, MachineType = 2, Comment = "Отрегулировать сверло", DateBegin = DateTime.UtcNow, RepairType = 6 });
             context.Repairs.Add(new RepairModel { Id = 3, MachineType = 3, Comment = "Заполнить маслом", DateBegin = DateTime.UtcNow, RepairType = 1 });
             context.Repairs.Add(new RepairModel { Id = 4, MachineType = 4, Comment = "Починить ножку", DateBegin = DateTime.UtcNow, RepairType = 4 });
+            context.Repairs.Add(new RepairModel { Id = 5, MachineType = 2, Comment = "Замена клапанов", DateBegin = DateTime.UtcNow, RepairType = 2 });
+            context.Repairs.Add(new RepairModel { Id = 6, MachineType = 3, Comment = "Замена электродвигателя", DateBegin = DateTime.UtcNow, RepairType = 2 });
+            context.Repairs.Add(new RepairModel { Id = 7, MachineType = 1, Comment = "Необходимо устранить неровности на поверхности станка", DateBegin = DateTime.UtcNow, RepairType = 3 });
+            context.Repairs.Add(new RepairModel { Id = 8, MachineType = 4, Comment = "Удалить царапины с поверхности", DateBegin = DateTime.UtcNow, RepairType = 3 });
+            context.Repairs.Add(new RepairModel { Id = 9, MachineType = 2, Comment = "Собрать сверлильный станок", DateBegin = DateTime.UtcNow, RepairType = 5 });
+            context.Repairs.Add(new RepairModel { Id = 10, MachineType = 3, Comment = "Собрать фрезировочный станок", DateBegin = DateTime.UtcNow, RepairType = 5 });
+            context.Repairs.Add(new RepairModel { Id = 11, MachineType = 1, Comment = "Провести смазку механизмов", DateBegin = DateTime.UtcNow, RepairType = 1 });
+            context.Repairs.Add(new RepairModel { Id = 12, MachineType = 2, Comment = "Поменять подшипники", DateBegin = DateTime.UtcNow, RepairType = 2 });
+            context.Repairs.Add(new RepairModel { Id = 13, MachineType = 3, Comment = "Провести удаление заусенцев с поверхности", DateBegin = DateTime.UtcNow, RepairType = 3 });
+            context.Repairs.Add(new RepairModel { Id = 14, MachineType = 4, Comment = "Провести выравнивание оси", DateBegin = DateTime.UtcNow, RepairType = 4 });
+            context.Repairs.Add(new RepairModel { Id = 15, MachineType = 4, Comment = "Собрать токарный станок", DateBegin = DateTime.UtcNow, RepairType = 5 });
+            context.Repairs.Add(new RepairModel { Id = 16, MachineType = 1, Comment = "Провести регулировку скорости вращения болванки", DateBegin = DateTime.UtcNow, RepairType = 6 });
+
 
             //  This method will be called after migrating to the latest version.
 
