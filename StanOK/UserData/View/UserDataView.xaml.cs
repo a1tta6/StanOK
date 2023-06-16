@@ -49,23 +49,29 @@ namespace StanOK.UserData.View
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            AddUserDataView addUserDataView = new AddUserDataView(ViewModel.SelectedUser);
-            bool? ans = addUserDataView.ShowDialog();
-            ViewModel.LoadUsers();
-            if ((bool)ans)
+            if (ViewModel.SelectedUser != null)
             {
-                this.DialogResult = true;
-                this.Close();
+                AddUserDataView addUserDataView = new AddUserDataView(ViewModel.SelectedUser);
+                bool? ans = addUserDataView.ShowDialog();
+                ViewModel.LoadUsers();
+                if ((bool)ans)
+                {
+                    this.DialogResult = true;
+                    this.Close();
+                }
             }
 
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.Delete();
-            ViewModel.LoadUsers();
-            this.DialogResult = true;
-            this.Close();
+            if (ViewModel.SelectedUser != null)
+            {
+                ViewModel.Delete();
+                ViewModel.LoadUsers();
+                this.DialogResult = true;
+                this.Close();
+            }
         }
     }
 }

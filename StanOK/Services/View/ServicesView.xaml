@@ -52,6 +52,7 @@
                     FontSize="18"
                     Margin="30,0,0,0"
                     x:Name="BackButton"
+                    IsCancel="True"
                     Click="BackButton_Click"
                     Width="100"/>
             <Button Content="Изменить"

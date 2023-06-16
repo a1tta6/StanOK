@@ -51,9 +51,12 @@ namespace StanOK.Services.View
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            AddServiceView addServiceView = new AddServiceView(ViewModel.SelectedService);
-            addServiceView.ShowDialog();
-            ViewModel.LoadServices(RepairId);
+            if (ViewModel.SelectedService != null)
+            {
+                AddServiceView addServiceView = new AddServiceView(ViewModel.SelectedService);
+                addServiceView.ShowDialog();
+                ViewModel.LoadServices(RepairId);
+            }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -65,8 +68,11 @@ namespace StanOK.Services.View
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.DeleteService();
-            ViewModel.LoadServices(RepairId);
+            if (ViewModel.SelectedService != null)
+            {
+                ViewModel.DeleteService();
+                ViewModel.LoadServices(RepairId);
+            }
         }
     }
 }

@@ -77,7 +77,6 @@ namespace StanOK.Benches.ViewModel
                 userContext.Machines.First(x => x.Id == EditingBench.Id).Year = EditingBench.Year;
                 userContext.Machines.First(x => x.Id == EditingBench.Id).Repairs = EditingBench.Repairs;
 
-
                 userContext.SaveChanges();
 
             }

@@ -67,46 +67,41 @@ namespace StanOK.UserData.ViewModel
             userContext.Users.Remove(EditingUserData);
             userContext.SaveChanges();
         }
+        public bool ValidatePassword()
+        {
+            bool SuccessValidate = true;
+            bool HasBigLetters = false;
+            bool HasSmallLetters = false;
+            bool HasDigit = false;
+            bool HasOtherSymbols = false;
+            if (Password != null)
+            {
+                if (Password.Length >= 10)
+                {
+                    int a = Password.Length;
+                    for (int i = 0; i < a; i++)
+                    {
+                        if ('A' <= Password[i] && Password[i] <= 'Z')
+                            HasBigLetters = true;
+                        else if ('a' <= Password[i] && Password[i] <= 'z')
+                            HasSmallLetters = true;
+                        else if ('0' <= Password[i] && Password[i] <= '9')
+                            HasDigit = true;
+                        else
+                            HasOtherSymbols = true;
+                    }
+                    SuccessValidate = HasBigLetters && HasSmallLetters && HasDigit && HasOtherSymbols;
+                }
+                else SuccessValidate = false;
+            }
+            else SuccessValidate = false;
+            return SuccessValidate;
+        }
         public bool Save()
         {
-            bool bo = true;
-            {
-                if (Password != null)
-                {
-                    if (Password.Length >= 10)
-                    {
-                        bool fl_A = false;
-                        bool fl_a = false;
-                        bool fl_1 = false;
-                        bool fl__ = false;
-                        int a = Password.Length;
-                        for (int i = 0; i < a; i++)
-                        {
-                            if ('A' <= Password[i] && Password[i] <= 'Z')
-                            {
-                                fl_A = true;
-                            }
-                            else if ('a' <= Password[i] && Password[i] <= 'z')
-                            {
-                                fl_a = true;
-                            }
-                            else if ('0' <= Password[i] && Password[i] <= '9')
-                            {
-                                fl_1 = true;
-                            }
-                            else 
-                            { 
-                                fl__ = true; 
-                            }
-                        }
-                        bo = fl_A && fl_a && fl_1 && fl__;
-                    }
-                    else bo = false;
-                }
-                else bo = false;
-            }
             UserContext userContext = new UserContext();
-            if (EditingUserData.Id != 0 && bo)
+            bool PasswordIsOK = ValidatePassword();
+            if (EditingUserData.Id != 0 && PasswordIsOK)
             {
 
                 userContext.Users.First(x => x.Id == EditingUserData.Id).Login = EditingUserData.Login;
@@ -118,7 +113,7 @@ namespace StanOK.UserData.ViewModel
             }
             else
             {
-                if (bo)
+                if (PasswordIsOK)
                 {
                     userContext.Users.Add(EditingUserData);
                     userContext.SaveChanges();

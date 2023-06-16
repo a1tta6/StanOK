@@ -76,16 +76,16 @@ namespace StanOK.Services.ViewModel
             BenchTypes = context.Machines.ToList();
             RepairTypes = context.RepairTypes.ToList();
 
-            if (EditingRepair != null)
-                this.EditingRepair = EditingRepair;
-            else this.EditingRepair = new RepairModel();
             if (isNew)
             {
                 Title = "Добавление услуги";
                 OperType = "Добавить";
+                this.EditingRepair = new RepairModel();
+                this.EditingRepair.DateBegin = DateTime.Today;
             }
             else
             {
+                this.EditingRepair = EditingRepair;
                 SelectedBench = BenchTypes.First(x => x.Id == EditingRepair.Machine.Id);
                 SelectedRepair = RepairTypes.First(x => x.Id == EditingRepair.Repair.Id);
                 Title = "Изменение услуги";

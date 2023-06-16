@@ -43,16 +43,15 @@ namespace StanOK.Services.View
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            if ((ViewModel.SelectedBench==null) || (ViewModel.SelectedRepair == null))
+            if ((ViewModel.SelectedBench == null) || (ViewModel.SelectedRepair == null))
             {
                 MessageBox.Show("Присутствуют пустые поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                MessageBox.Show("Запись успешно сохранена!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
                 ViewModel.Save();
+                this.Close();
             }
-            this.Close();
         }
     }
 }
