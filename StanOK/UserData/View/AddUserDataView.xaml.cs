@@ -43,12 +43,19 @@ namespace StanOK.UserData.View
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            bool flag;
-            flag = ViewModel.Save();
-            if (flag)
+            if (ViewModel.Login == null || ViewModel.Role == null || ViewModel.Login == "" || ViewModel.Role == "")
             {
-                this.DialogResult = true;
-                this.Close();
+                MessageBox.Show("Присутствуют пустые поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                bool flag;
+                flag = ViewModel.Save();
+                if (flag)
+                {
+                    this.DialogResult = true;
+                    this.Close();
+                }
             }
         }
     }

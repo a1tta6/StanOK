@@ -46,7 +46,7 @@ namespace StanOK.Benches.View
             {
                 MessageBox.Show("Присутствуют пустые поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else if (!((ViewModel.Year <= DateTime.Today.Year) && ((ViewModel.Year >= 1600)))) //валидация года
+            else if (!((ViewModel.Year <= DateTime.Today.Year) && (ViewModel.Year >= 1600))) //валидация года
             {
                 MessageBox.Show("Неверный формат года!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
