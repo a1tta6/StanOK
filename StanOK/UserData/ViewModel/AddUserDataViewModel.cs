@@ -120,7 +120,7 @@ namespace StanOK.UserData.ViewModel
                     MessageBox.Show("Аутентификационные данные добавлены. Для продолжения работы необходимо заново авторизоваться", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
                     return true;
                 }
-                else MessageBox.Show("Пароль не соответствует требованиям безопасности", "Ошибка пароля", MessageBoxButton.OK, MessageBoxImage.Information);
+                else MessageBox.Show("Пароль не соответствует требованиям безопасности. Пароль должен быть не менее 10 символов, содержать символы разного регистра, цифры и специальные символы", "Ошибка пароля", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }
