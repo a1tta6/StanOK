@@ -24,12 +24,9 @@ namespace StanOK.UserData.ViewModel
         }
         public void Delete()
         {
-            if (SelectedUser != null)
-            {
-                context.Users.Remove(context.Users.First(x => x.Id == SelectedUser.Id));
-                context.SaveChanges();
-                MessageBox.Show("Аутентификационные данные удалены.\nДля продолжения работы необходимо авторизоваться заново.", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+            context.Users.Remove(context.Users.First(x => x.Id == SelectedUser.Id));
+            context.SaveChanges();
+            MessageBox.Show("Аутентификационные данные удалены.\nДля продолжения работы необходимо авторизоваться заново.", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         public void LoadUsers()
         {

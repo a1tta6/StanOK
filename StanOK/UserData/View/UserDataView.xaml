@@ -50,6 +50,7 @@
                 Width="100" 
                 FontSize="18"
                 Margin="80,0,0,0"
+                IsCancel="True"
                 x:Name="Back"
                 Click="Back_Click"
                 />

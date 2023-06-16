@@ -33,11 +33,7 @@ namespace StanOK.Benches.View
         {
             InitializeComponent();
             ViewModel = new AddBenchViewModel(false, EditingMachine);
-            
             DataContext = ViewModel;
-
-            
-           
         }
         private void CanselButton_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +42,7 @@ namespace StanOK.Benches.View
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            if ((ViewModel.BenchType==null)||(ViewModel.Country==null)||(ViewModel.Brand == null)||(ViewModel.BenchType == "") || (ViewModel.Country == "") || (ViewModel.Brand == ""))
+            if ((ViewModel.BenchType == null) || (ViewModel.Country == null) || (ViewModel.Brand == null) || (ViewModel.BenchType == "") || (ViewModel.Country == "") || (ViewModel.Brand == ""))
             {
                 MessageBox.Show("Присутствуют пустые поля!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -54,7 +50,7 @@ namespace StanOK.Benches.View
             {
                 MessageBox.Show("Неверный формат года!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else if (ViewModel.Repairs<0) //валидация количества ремонтов
+            else if (ViewModel.Repairs<=0) //валидация количества ремонтов
             {
                 MessageBox.Show("Неверный формат количества ремонтов!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -62,9 +58,8 @@ namespace StanOK.Benches.View
             {
                 MessageBox.Show("Запись успешно сохранена!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
                 ViewModel.Save();
+                this.Close();
             }
-
-
         }
     }
 }

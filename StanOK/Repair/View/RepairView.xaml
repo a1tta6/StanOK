@@ -82,6 +82,7 @@
                     FontSize="18"
                     Content="Вернуться к выбору типа ремонта"
                     Click="Back_Click"
+                    IsCancel="True"
                     Margin="10"
                     x:Name="Back"/>
             <Button Width="300"

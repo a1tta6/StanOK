@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StanOK.MainPage.View"
         mc:Ignorable="d"
-        Title="Выбор вида ремонта" Height="800" Width="800">
+        Title="Выбор вида ремонта" Height="750" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -36,6 +36,7 @@
             <Button Margin="20" 
                     Content="Закончить сеанс пользователя" 
                     Width="250"
+                    IsCancel="True"
                     x:Name="BackButton"
                     Click="BackButton_Click"
                     FontSize="16"/>

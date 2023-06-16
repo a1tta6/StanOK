@@ -46,6 +46,7 @@ namespace StanOK.Repair.View
         private void ChangeInfo_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.Changing();
+            MessageBox.Show("Запись успешно сохранена!", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

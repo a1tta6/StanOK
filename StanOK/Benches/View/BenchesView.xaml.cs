@@ -47,8 +47,11 @@ namespace StanOK.Benches
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.Delete();
-            ViewModel.LoadBenches();
+            if (ViewModel.SelectedBench != null)
+            {
+                ViewModel.Delete();
+                ViewModel.LoadBenches();
+            }
         }
         private void Update_Click(object sender, RoutedEventArgs e)
         {

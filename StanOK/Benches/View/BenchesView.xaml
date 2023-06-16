@@ -47,6 +47,7 @@
             <Button Content="Назад" 
                     Margin="30,0,0,0"
                     x:Name="BackButton"
+                    IsCancel="True"
                     FontSize="18" Height="60" 
                     Width="120" Click="BackButton_Click"/>
             <Button Content="Удалить" 
