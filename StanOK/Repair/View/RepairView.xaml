@@ -87,7 +87,7 @@
                     x:Name="Back"/>
             <Button Width="300"
                     FontSize="18"
-                    Content="Изменить данные по ремонту"
+                    Content="Сохранить изменения"
                     x:Name="ChangeInfo"
                     Visibility="{Binding ElementVisibility}"
                     IsEnabled="{Binding CanEdit}"
